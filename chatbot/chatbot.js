@@ -31,11 +31,26 @@ if (lastUserMessage =='what is faang' || lastUserMessage =='FAANG' || lastUserMe
 }else if (lastUserMessage == 'eps' || lastUserMessage=='EPS') {
   botMessage = 'Earning Per Share';
 }else if (lastUserMessage=='create account') {
-  botMessage= 'You can create a account by going to our signup page';
+  botMessage= 'You can create a account by going to our' + '<a href="../signup.html"> signup page</a>' ;
+}else if (lastUserMessage =='S&P 500' || lastUserMessage=='what is the s&p500' || lastUserMessage=='s&p500') {
+  botMessage ='The top 500 companies in the USA stock market, we recommend using the Vanguard Ishares or invesco ETf for this';
+}else if (lastUserMessage == 'FTSE' || lastUserMessage=='ftse' || lastUserMessage =='what is the FTSE' || lastUserMessage == 'what is the ftse') {
+  botMessage ='The FTSE tracks the UK stock market and comes under ftse 100 or 250';
+}else if (lastUserMessage == 'P/E ratio' || lastUserMessage =='pe ratio' || lastUserMessage =='') {
+  botMessage ='This can tell you if a stock is under or over valued';
+}else if (lastUserMessage=='dividend yeild' || lastUserMessage== 'DY' || lastUserMessage =='dy') {
+  botMessage ='The percentage a company will give you in return for being a shareholder';
+}else if (lastUserMessage =='dividend') {
+  botMessage= 'check how much you will be paid by using this' + '<a href="https://www.dividendmax.com/" target="_blank"> dividend</a>' +' website';
+}else if (lastUserMessage =='small cap' || lastUserMessage =='sc' || lastUserMessage == 'SC') {
+  botMessage = 'Companies which are valued under 1 billion';
+}else if (lastUserMessage == 'EM' || lastUserMessage=='emerging market') {
+  botMessage ='Companies which come from developing countries';
+}else if (lastUserMessage=='Nasdaq' || lastUserMessage=='NASDAQ' || lastUserMessage=='DOW' || lastUserMessage=='CAC' || lastUserMessage=='DAX' || lastUserMessage=='dax') {
+  botMessage ='index trackers which help to track the market';
 }
 else {
   botMessage = "I'm confused"; //the default message
-
 }
 }
 /*if (lastUserMessage == 'hi' || lastUserMessage =='hello') {
