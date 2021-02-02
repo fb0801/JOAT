@@ -1,3 +1,17 @@
+/*[data-theme="dark"] {
+  --color-bg: #000000;
+}
+*/
+.dark-mode {
+  background-color: black;
+  color: white;
+}
+.edit_link{
+  /*remove underline from site link*/
+	text-decoration:none;
+	color:#ffffff;
+}
+}
 .bg-2 {
     background-color: #474e5d; /* Dark Blue */
     color: #ffffff;
@@ -73,6 +87,12 @@ margin-top:380px;
     width: 50px;
     col
   }
+}
+@media screen and (max-width: 910px){
+  /*.navbar {
+	float:none;
+	width:100%;
+	display: block;*/
 }
 @media screen and (min-width: 722px){
 

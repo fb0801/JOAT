@@ -1,3 +1,9 @@
+<!-- Start live server: ctrl+alt+l
+Stop live server: ctrl+alt+q -->
+<?php
+  //require_once( 'includes/dbutils.php');
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -13,9 +19,10 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 </head>
+
 <body>
 
-  <div class="dif">
+  <diV class="dif">
 
   <a href="index.html"><img class ="logo" src="image/logo2.jpg" alt="Logo" title="return to mainpage"></a>
 <br><br><br><br>
@@ -31,15 +38,16 @@
       </button>
       <a class="navbar-brand" href="index.html">JOAT</a>
     </div>
+
     <div class="collapse navbar-collapse" id="myNavbar">
       <ul class="nav navbar-nav">
         <li><a href="index.html">Home</a></li>
-        <li><a href="#">Investment</a></li>
-      <li><a href="#">Card Companies</a></li>
-      <li><a href="#">News</a></li>
-      <li><a href="#">Articles</a></li>
-      <li><a href="#">Apply</a></li>
-      <li><a href="#">About us</a></li>
+        <li><a href="invest.html">Investment</a></li>
+      <li><a href="card.html">Card Companies</a></li>
+      <li><a href="news.html">News</a></li>
+      <li><a href="article.html">Articles</a></li>
+      <li><a href="apply.html">Apply</a></li>
+      <li><a href="about_us.html">About us</a></li>
       <li><a href="contact.html">Contact us</a></li>
       <li><a href="feedback.html">Feedback</a></li>
     </ul>
@@ -66,7 +74,7 @@
 
 <div class="container">
   <h2 id="Joat_head">Create Account</h2>
-  <form action="/action_page.php">
+  <form action="signup_6.php" method="POST">
     <div class="form-group">
       <label id='lbl' for="name">Name:</label>
       <div class="input-group">
@@ -99,8 +107,8 @@
       <label id='lbl_5' for="sel1">Account Type (select one):</label>
       <div class="input-group">
       <span class="input-group-addon"><i class="glyphicon glyphicon-user"data-toggle="tooltip" title="Create a investment account or a normal JOAT account" ></i></span>
-      <select class="form-control" id="sel1">
-        <option>Invest</option>
+      <select name="acc_type" class="form-control" id="sel1">
+        <option>JOAT Invest</option>
         <option>JOAT Account</option>
 
       </select>
@@ -109,7 +117,7 @@
 
     </div></div>
 
-    <button type="submit" class="btn btn-default">Submit</button>
+    <button type="submit" name="submit" class="btn btn-default">Submit</button>
   </form>
 </div>
 

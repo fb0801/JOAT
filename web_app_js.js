@@ -20,8 +20,11 @@ function topfunc() {
 }
 //change elements colour
 function changeBGC(color){
+  var t_Switch = document.getElementById('body');
 if (color=='#000000'){
 		document.body.style.backgroundColor = color;
+    document.body.setAttribute('body', '#000000');
+    localStorage.setItem('bdy_clr','#000000');
     document.getElementById('Joat_head').style.color='white';
     document.getElementById('lbl').style.color="white";
     document.getElementById('lbl_2').style.color="white";
@@ -36,6 +39,7 @@ if (color=='#000000'){
 	}else{
     //change element colour back
 		document.body.style.backgroundColor = color;
+    //document.getElementById('body').style.color='white';
 		document.getElementById('Joat_head').style.color='black';
     document.getElementById('lbl').style.color="black";
     document.getElementById('lbl_2').style.color="black";
@@ -63,3 +67,9 @@ for (i=0; i< text.length; i++){
  text[i].style.fontSize='14px';
 
 }}
+
+function changeBGC_2(){
+  var element = document.body;
+   element.classList.toggle("dark-mode");
+
+  }
