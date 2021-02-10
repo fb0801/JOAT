@@ -46,7 +46,7 @@ if (lastUserMessage =='what is faang' || lastUserMessage =='FAANG' || lastUserMe
   botMessage = 'Companies which are valued under 1 billion';
 }else if (lastUserMessage == 'EM' || lastUserMessage=='emerging market') {
   botMessage ='Companies which come from developing countries';
-}else if (lastUserMessage=='Nasdaq' || lastUserMessage=='NASDAQ' || lastUserMessage=='DOW' || lastUserMessage=='CAC' || lastUserMessage=='DAX' || lastUserMessage=='dax') {
+}else if (lastUserMessage=='Nasdaq' || lastUserMessage=='nasdaq' || lastUserMessage=='NASDAQ' || lastUserMessage=='DOW' || lastUserMessage=='CAC' || lastUserMessage=='DAX' || lastUserMessage=='dax') {
   botMessage ='index trackers which help to track the market';
 }
 else {

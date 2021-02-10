@@ -1,0 +1,79 @@
+.bg-2 {
+    background-color: #474e5d; /* Dark Blue */
+    color: #ffffff;
+}
+.welcome_class{
+	margin-top: 30px;
+	padding-top: 50px;
+	padding-bottom: 70px;
+	margin-bottom: 20px;
+}
+#csi{
+height: 320px;
+width:20px;
+}
+#csi_2{
+  height: 320px;
+  width:20px;
+  }
+.gly_edit{
+	font-size: 310px;
+}
+#mybtn{
+	display:none;
+	position: fixed; /*so it cannot be moved*/
+	bottom:20px; /*bottom pad*/
+	right:30px; /*right pad*/
+	font-size: 16px; /*font size*/
+	border: none;
+	outline: none;
+	background-color: #63b8e6;
+	color: white; /*text color*/
+	cursor: pointer;
+	padding:15px;
+	border-radius: 4px;
+}
+#mybtn:hover{
+	/*on hover*/
+	background-color: #557A95;
+	color: white;
+}
+.dif{
+	background-color: black;
+}
+/*.navbar{
+	float: left;
+}*/
+/*.container-fluid{
+	float: left;
+}*/
+#no_head{
+	color:black;
+}
+.logo{
+	float:left;
+	height: 70px;
+	margin-bottom: 10px;
+}
+.bottom_sec {
+	/*footer of the site*/
+margin-top:380px;
+/*100*/
+	background-color: lightgrey;
+	padding: 20px;
+	margin-bottom: 10px;
+	/*position:relative;
+	bottom:0;
+	width:1480px;*/
+	/*position: relative; absolute*/
+}
+
+@media screen and (min-width: 1026px) {
+  #csi_2{
+    width: 50px;
+    col
+  }
+}
+@media screen and (min-width: 722px){
+
+}

@@ -12,13 +12,15 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-<link rel="stylesheet" type="text/css" href="chatb_2.css"> <!--own stylesheet-->
-  <script type="text/javascript" src="chatbot.js"></script> <!--own javascript file-->
 
+
+<link rel="stylesheet" type="text/css" href="chatb.css"> <!--own stylesheet-->
+  <script type="text/javascript" src="chatbot.js"></script> <!--own javascript file-->
 </head>
 <style>
-
-
+/*body {font-family: Arial, Helvetica, sans-serif;}
+* {box-sizing: border-box;}
+*/
 /* Button used to open the chat form - fixed at the bottom of the page */
 .open-button {
   background-color: #555;
@@ -30,7 +32,7 @@
   position: fixed;
   bottom: 23px;
   right: 28px;
-  width: 80px;
+  width: 280px;
 }
 
 /* The popup chat - hidden by default */
@@ -41,35 +43,35 @@
   right: 15px;
   border: 3px solid #f1f1f1;
   z-index: 9;
-  width:320px;
+  
 }
 
-/* Add styles to the form container */
-.container {
+/* Add styles to the form container 
+.form-container {
   max-width: 300px;
   padding: 10px;
   background-color: white;
-}
+}*/
 
-/* Full-width textarea
-.container textarea {
+/* Full-width textarea */
+textarea {
   width: 100%;
   padding: 15px;
   margin: 5px 0 22px 0;
   border: none;
   background: #f1f1f1;
   resize: none;
-  min-height: 200px;
+  min-height: 150px;
 }
 
 /* When the textarea gets focus, do something */
-.container focus {
+ textarea:focus {
   background-color: #ddd;
   outline: none;
 }
 
 /* Set a style for the submit/send button */
-.container .btn {
+.btn {
   background-color: #4CAF50;
   color: white;
   padding: 16px 20px;
@@ -84,30 +86,14 @@
 .cancel {
   background-color: red;
   float:right;
+  color:white;
 }
 
 /* Add some hover effects to buttons */
-.container .btn:hover, .open-button:hover {
+.btn:hover, .open-button:hover {
   opacity: 1;
 }
-#chatborder {
-  border-style: solid;
-  background-color: #f6f9f6;
-  border-width: 3px;
-  margin-top: 20px;
-  margin-bottom: 20px;
-  margin-left: 5px;
-  margin-right: 5px;
-  padding-top: 10px;
-  padding-bottom: 10px;
-  padding-right: 20px;
-  padding-left: 15px;
-  border-radius: 15px;
-}
 
-.chatlog {
-   font: 15px arial, sans-serif;
-}
 </style>
 </head>
 <body>
@@ -160,19 +146,18 @@
     </ul>
   </div>  </div>
 </nav>
-<h2>Popup Chat Window</h2>
 
+<h2>Popup Chat Window</h2>
 
 <button class="open-button" onclick="openForm()">Chat</button>
 
-<div class=" container chat-popup" id="myForm">
- 
-  
-              <button type="button" class="cancel" onclick="closeForm()">Close</button>
-    <h4 class="text-center">Jack The Bot</h4>
-         <span class="info_gly glyphicon glyphicon-question-sign"></span>
+<div class="chat-popup" id="myForm">
 
-		  <div id='chatborder'>
+        <button type="button" class="btn cancel" onclick="closeForm()">Close</button>
+<h1>Jack the Bot</h1>
+
+    <div id='bodybox'>
+  <div id='chatborder'>
     <p id="chatlog7" class="chatlog">&nbsp;</p>
     <p id="chatlog6" class="chatlog">&nbsp;</p>
     <p id="chatlog5" class="chatlog">&nbsp;</p>
@@ -180,24 +165,12 @@
     <p id="chatlog3" class="chatlog">&nbsp;</p>
     <p id="chatlog2" class="chatlog">&nbsp;</p>
     <p id="chatlog1" class="chatlog">&nbsp;</p>
-    <input type="text " name="chat" id="chatbox" placeholder="Type here to ask." onfocus="placeHolder()">
+    <input type="text" name="chat" id="chatbox" placeholder="Hi there! Type here to talk to me." onfocus="placeHolder()">
   </div>
-    <div class="textarea"></div>
-
-</div>
-
-<div class="bottom_sec">
-    <footer>
-  <p>&copy; This is a demonstration website for LSBU (London Southbank University) all images and text are from, Yahoo finance, Google finance, Blackrock, Ishares, Vanguard and my own blog</p>
-  </footer>
-  </div>
-
-<button onclick="topfunc()" id="mybtn" title="Go to top"><span class="glyphicon glyphicon-chevron-up"></span></button>
+ 
+</div></div>
 
 <script>
-//Get the button
-var mybutton = document.getElementById("mybtn");
-
 function openForm() {
   document.getElementById("myForm").style.display = "block";
 }
@@ -205,7 +178,17 @@ function openForm() {
 function closeForm() {
   document.getElementById("myForm").style.display = "none";
 }
+//Get the button
+var mybutton = document.getElementById("mybtn");
 </script>
+  <div class="bottom_sec">
+    <footer>
+  <p>&copy; This is a demonstration website for LSBU (London Southbank University) all images and text are from, Yahoo finance, Google finance, Blackrock, Ishares, Vanguard and my own blog</p>
+  </footer>
+  </div>
+
+<button onclick="topfunc()" id="mybtn" title="Go to top"><span class="glyphicon glyphicon-chevron-up"></span></button>
 
 </body>
 </html>
+
