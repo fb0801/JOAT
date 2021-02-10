@@ -7,12 +7,86 @@
   <link rel="stylesheet" type="text/css" href="web_app.css"> <!--own stylesheet-->
   <script type="text/javascript" src="web_app_js.js"></script> <!--own javascript file-->
   <link rel="shortcut icon" type="image/x-icon" href="image/favicon.ico"> <!--adds a image to the title-->
+  <link rel="stylesheet" type="text/css" href="chatbot/chatb_2.css"> <!--own stylesheet-->
+    <script type="text/javascript" src="chatbot/chatbot.js"></script> <!--own javascript file-->
 
 <!--3 bootstrapcdn links-->
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 </head>
+<style>
+/* The popup chat - hidden by default */
+.chat-popup {
+  display: none;
+  position: fixed;
+  bottom: 0;
+  right: 15px;
+  border: 3px solid #f1f1f1;
+  z-index: 9;
+  width:320px;
+}
+.open-button{
+  background-color: #6699ff; /*#555;*/
+  color: white;
+  padding: 16px 20px;
+  border: none;
+  cursor: pointer;
+  opacity: 0.8;
+  position: fixed;
+  bottom: 23px;
+  right: 28px;
+  width: 80px;
+}
+#chatborder {
+  border-style: solid;
+  background-color: #f6f9f6;
+  border-width: 3px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  margin-left: 5px;
+  margin-right: 5px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-right: 20px;
+  padding-left: 15px;
+  border-radius: 15px;
+}
+
+.chatlog {
+   font: 15px arial, sans-serif;
+}
+.container {
+  max-width: 300px;
+  padding: 10px;
+  background-color: white;
+}
+/* When the textarea gets focus, do something */
+.container focus {
+  background-color: #ddd;
+  outline: none;
+}
+
+/* Set a style for the submit/send button */
+.container .btn {
+  background-color: #4CAF50;
+  color: white;
+  padding: 16px 20px;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  margin-bottom:10px;
+  opacity: 0.8;
+}
+/* Add some hover effects to buttons */
+.container .btn:hover, .open-button:hover {
+  opacity: 1;
+}
+.info_gly{
+float: right;
+
+}
+</style>
 <body>
 
   <div class="dif">
@@ -124,6 +198,31 @@
           <img id="csi_2" src="image/logo2.jpg" class="img-responsive" style="width:100%" alt="Image">
           <p>About</p>
         </div>
+        <button class="open-button" type="button" class="btn btn-primary btn-lg"  onclick="openForm()">
+
+        <span class="glyphicon glyphicon-comment"></span>  </button>
+
+        <div class=" container chat-popup" id="myForm">
+
+          <button type="button" class="close" onclick="closeForm()">&times;</button>
+
+
+            <h4 class="text-center">Jack The Bot</h4>
+                 <span class="info_gly glyphicon glyphicon-question-sign"></span>
+
+        		  <div id='chatborder'>
+            <p id="chatlog7" class="chatlog">&nbsp;</p>
+            <p id="chatlog6" class="chatlog">&nbsp;</p>
+            <p id="chatlog5" class="chatlog">&nbsp;</p>
+            <p id="chatlog4" class="chatlog">&nbsp;</p>
+            <p id="chatlog3" class="chatlog">&nbsp;</p>
+            <p id="chatlog2" class="chatlog">&nbsp;</p>
+            <p id="chatlog1" class="chatlog">&nbsp;</p>
+            <input type="text " name="chat" id="chatbox" placeholder="Type here to ask." onfocus="placeHolder()">
+          </div>
+            <div class="textarea"></div>
+
+        </div>
 
   <div class="bottom_sec">
     <footer>
@@ -140,6 +239,14 @@
 //Get the button
 var mybutton = document.getElementById("mybtn");
 
+
+function openForm() {
+  document.getElementById("myForm").style.display = "block";
+}
+
+function closeForm() {
+  document.getElementById("myForm").style.display = "none";
+}
 </script>
 </body>
 </html>
