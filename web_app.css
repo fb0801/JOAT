@@ -11,6 +11,17 @@
 	text-decoration:none;
 	color:#ffffff;
 }
+.edit_link_2{
+  /*remove underline from site link*/
+	text-decoration:none;
+	color:black;
+}
+.info_gly{
+float: right;
+}
+.glyc_edit{
+  float: right;
+  color: red;
 }
 .bg-2 {
     background-color: #474e5d; /* Dark Blue */
