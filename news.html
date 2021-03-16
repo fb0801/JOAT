@@ -1,3 +1,7 @@
+<?php
+  require_once( 'includes/dbutils.php');
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -35,10 +39,10 @@
     <ul class="nav navbar-nav">
       <li><a href="index.html">Home</a></li>
       <li><a href="invest.html">Investment</a></li>
-    <li><a href="#">Card Companies</a></li>
+    <li><a href="card.html">Card Companies</a></li>
     <li class="active"><a href="news.html">News</a></li>
-    <li><a href="#">Articles</a></li>
-    <li><a href="#">Apply</a></li>
+    <li><a href="article.html">Articles</a></li>
+    <li><a href="apply.html">Apply</a></li>
     <li ><a href="about_us.html">About us</a></li>
     <li ><a href="contact.html">Contact us</a></li>
     <li><a href="feedback.html">Feedback</a></li>
@@ -76,7 +80,7 @@
 
 <div class="bottom_sec">
 <footer >
-    <form class="form-inline text-center" method="post" action="news.php">Like what you see and want to get notifed of news and articles sign up:
+    <form class="form-inline text-center" method="post" action="includes/news.php">Like what you see and want to get notifed of news and articles sign up:
       <input type="email" name="email" class="form-control" size="50" placeholder="Email Address">
       <select name="sub_type" class="form-control" id="sel1">
         <option>Invesment</option>
@@ -85,7 +89,7 @@
         <option>Offers</option>
         <option>Everything</option>
       </select>
-      <button type="button" class="btn btn-danger" name="submit">Sign Up</button>
+      <button type="submit" class="btn btn-danger" name="submit">Sign Up</button>
     </form><br>
 <p>&copy; This is a demonstration website for LSBU (London Southbank University) all images and text are from, Yahoo finance, Google finance, Blackrock, Ishares, Vanguard and my own blog</p>
 
