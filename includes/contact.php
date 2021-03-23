@@ -40,7 +40,7 @@ require_once "dbutils.php";
       <span class="icon-bar"></span>
       <span class="icon-bar"></span>
     </button>
-    <a class="navbar-brand" href="index.html">JOAT</a>
+    <a class="navbar-brand" href="../index.html">JOAT</a>
   </div>
   <div class="collapse navbar-collapse" id="myNavbar">
     <ul class="nav navbar-nav">
@@ -77,7 +77,7 @@ require_once "dbutils.php";
 
 
 <div class="container text-left">
-<h2 id="Joat_head">News</h2>
+<h2 id="Joat_head">JOAT contact us</h2>
 
 <?php
 
@@ -93,25 +93,26 @@ try {
   $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
   // prepare sql and bind parameters
-  $stmt = $conn->prepare("INSERT INTO joat_sub (sub_email,subscription)
-  VALUES (:email,:sub)");
+  $stmt = $conn->prepare("INSERT INTO joat_contact (con_first,con_email,con_subject,con_text)
+  VALUES (:fname,:email,:sub,:con_msg)");
 
 
   $stmt->bindParam(':email', $email);
-  $stmt->bindParam(':sub', $app_sub);
+  $stmt->bindParam(':sub', $select);
+  $stmt->bindParam(':con_msg', $msg);
+  $stmt->bindParam(':fname', $name);
 
   // insert a row
   $email = $_REQUEST['email'];
-  $app_sub = $_REQUEST['sub_type'];
+  $msg=$_REQUEST['message'];
+  $select=$_REQUEST['selection'];
+  $name=$_REQUEST['name'];
   $stmt->execute();
 
   // insert another row
-  /*$app_sub = "Mary";
-  $email = "mary@example.com";
-  $stmt->execute();*/
 
   //echo "New record created successfully";
-  print "<p>you can continue using the app just click on the login button or on the link below</p>
+  print "<p>Thanks for contacting us</p>
       <button type='submit' class='btn btn-default'><a class='edit_link' href='../login.html'>Login</a></button>";
     }
 catch(PDOException $e)

@@ -4,9 +4,9 @@
   <title>JOAT | signup</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" type="text/css" href="web_app.css"> <!--own stylesheet-->
-  <script type="text/javascript" src="web_app_js.js"></script> <!--own javascript file-->
-  <link rel="shortcut icon" type="image/x-icon" href="image/favicon.ico"> <!--adds a image to the title-->
+  <link rel="stylesheet" type="text/css" href="../web_app.css"> <!--own stylesheet-->
+  <script type="text/javascript" src="../web_app_js.js"></script> <!--own javascript file-->
+  <link rel="shortcut icon" type="image/x-icon" href="../image/favicon.ico"> <!--adds a image to the title-->
 
 <!--3 bootstrapcdn links-->
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
@@ -18,7 +18,7 @@
 
   <diV class="dif">
 
-  <a href="index.html"><img class ="logo" src="image/logo2.jpg" alt="Logo" title="return to mainpage"></a>
+  <a href="index.html"><img class ="logo" src="../image/logo2.jpg" alt="Logo" title="return to mainpage"></a>
 <br><br><br><br>
 </div>
 
@@ -112,7 +112,7 @@ $conn=mysqli_connect($dbServername, $dbUsername, $dbPassword, $dbName);
   }
   }
 mysqli_close($conn);
-  
+
 
 ?>
 
