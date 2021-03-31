@@ -24,7 +24,7 @@
     /* Set gray background color and 100% height */
     .sidenav {
       background-color: #f1f1f1;
-      height: 85%;
+      height: 80%;
     }
 
     /* On small screens, set height to 'auto' for the grid */
@@ -52,9 +52,8 @@
           <li class="active"><a href="home.html">Dashboard</a></li>
           <li ><a href="home.html">Dashboard</a></li>
           <li><a href="application.php">Applications</a></li>
-          <li><a href="joat_user.html">Users</a></li>
-          <li ><a href="asset.html">Assets</a></li>
-          <li class="active"><a href="content_add.html">Create Content</a></li>
+          <li class="active"><a href="asset.html">Assets</a></li>
+          <li ><a href="content_add.html">Create Content</a></li>
           <li ><a href="content_view.html">View articles</a></li>
           <li><a href="content_news.html">View News</a></li>
           <li><a href="content_report.html">Reports</a></li>
@@ -74,9 +73,8 @@
         <ul class="nav nav-pills nav-stacked">
           <li ><a href="home.html">Dashboard</a></li>
           <li><a href="application.php">Applications</a></li>
-          <li><a href="joat_user.html">Users</a></li>
-          <li ><a href="asset.html">Assets</a></li>
-          <li class="active"><a href="content_add.html">Create Content</a></li>
+          <li class="active"><a href="asset.html">Assets</a></li>
+          <li ><a href="content_add.html">Create Content</a></li>
           <li ><a href="content_view.html">View articles</a></li>
           <li><a href="content_news.html">View News</a></li>
           <li><a href="content_report.html">Reports</a></li>
@@ -90,48 +88,21 @@
         <p>Some text..</p>
       </div>
     <div class="container">
-      <h2 id="Joat_head">JOAT content</h2>
+      <h2 id="Joat_head">JOAT Asset</h2>
       <form action="" method="POST">
         <div class="form-group">
-          <label id='lbl' for="name">Title:</label>
+          <label id='lbl' for="name">Name:</label>
           <div class="input-group">
-          <span class="input-group-addon">Title</span>
-          <input type="text" class="form-control" id="name" placeholder="Enter your content title" name="name" size="10">
+          <span class="input-group-addon">Name</span>
+          <input type="text" class="form-control" id="name" placeholder="Enter company name" name="name" size="10">
         </div></div>
 
-        <div class="form-group">
-          <label id='lbl_3' for="image">Image</label>
-          <div class="input-group">
-          <span class="input-group-addon"><i class="glyphicon glyphicon-picture"></i></span>
-          <input type="file" class="form-control" id="myFile" name="filename"placeholder="select your image">
-        </div></div>
 
         <div class="form-group">
-          <label id='lbl_5' for="sel1">Content Type (select one):</label>
+          <label id='lbl' for="name">Interest:</label>
           <div class="input-group">
-          <span class="input-group-addon"><i class="glyphicon glyphicon-pencil"data-toggle="tooltip" title="Select the content type you would like to create" ></i></span>
-          <select class="form-control" id="sel1" name='content_type'>
-            <option value='News'>News</option>
-            <option value ='Article'>Article</option>
-
-          </select>
-          <br>
-
-
-        </div></div>
-        <div class="form-group">
-          <label id='lbl' for="text preview"></label>
-          <div class="input-group">
-          <span class="input-group-addon">Preview text</span>
-          <textarea name="pre_txt" rows="5" cols="50"></textarea>
-
-        </div></div>
-        <div class="form-group">
-          <label id='lbl' for="text preview"></label>
-          <div class="input-group">
-          <span class="input-group-addon">Content text</span>
-          <textarea name="content_txt" rows="5" cols="50"></textarea>
-
+          <span class="input-group-addon">%</span>
+          <input type="text" class="form-control" id="name" placeholder="%" name="joat_int" size="10">
         </div></div>
 <br>
 

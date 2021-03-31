@@ -5,7 +5,7 @@ require_once "dbutils.php";
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>JOAT | News</title>
+  <title>JOAT | Feedback</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" type="text/css" href="../web_app.css"> <!--own stylesheet-->
@@ -77,15 +77,15 @@ require_once "dbutils.php";
 
 
 <div class="container text-left">
-<h2 id="Joat_head">JOAT contact us</h2>
+<h2 id="Joat_head">JOAT Feedback</h2>
 
 <?php
 
 $username = 'Farhan';
 $password = 'Farhan3712356';
 $servername = 'localhost';
-$dbname = 'joat';
-/*joat_2*/
+$dbname = 'joat_2';
+/*joat*/
 
 try {
   $conn = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password);
@@ -93,30 +93,27 @@ try {
   $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
   // prepare sql and bind parameters
-  $stmt = $conn->prepare("INSERT INTO joat_contact (con_first,con_email,con_subject,con_text)
-  VALUES (:fname,:email,:sub,:con_msg)");
+  $stmt = $conn->prepare("INSERT INTO joat_feedback (con_first,con_email,con_text)
+  VALUES (:fname,:email,:con_msg)");
 
 
   $stmt->bindParam(':email', $email);
-  $stmt->bindParam(':sub', $select);
   $stmt->bindParam(':con_msg', $msg);
   $stmt->bindParam(':fname', $name);
 
   // insert a row
   $email = $_REQUEST['email'];
-  $msg=$_REQUEST['message'];
-  $select=$_REQUEST['selection'];
+  $msg=$_REQUEST['nam']
   $name=$_REQUEST['name'];
   $stmt->execute();
 
   // insert another row
 
   //echo "New record created successfully";
-  print "<p>Thanks for contacting us</p>
-      <a class='edit_link' href='../login.html'><button type='submit' class='btn btn-default'>Login</button></a>";
-//      <button type='submit' class='btn btn-default'><a class='edit_link' href='../login.html'>Login</a></button>";
+  print "<p>Thanks for your Feedback</p>
+  <a class='edit_link' href='../login.html'><button type='submit' class='btn btn-default'>Login</button></a>";
 
-
+      //<button type='submit' class='btn btn-default'><a class='edit_link' href='../login.html'>Login</a></button>";
     }
 catch(PDOException $e)
     {

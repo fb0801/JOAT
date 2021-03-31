@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <head>
-  <title>JOAT | News view</title>
+  <title>JOAT | user</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -52,11 +52,11 @@
       <ul class="nav navbar-nav">
         <li ><a href="home.html">Dashboard</a></li>
         <li><a href="application.php">Applications</a></li>
-        <li><a href="joat_user.html">Users</a></li>
-        <li><a href="asset.html">Assets</a></li>
+        <li class="active"><a href="joat_user.html">Users</a></li>
+        <li ><a href="asset.html">Assets</a></li>
         <li ><a href="content_add.html">Create Content</a></li>
-        <li><a href="content_view.html">View articles</a></li>
-        <li class="active"><a href="content_news.html">View News</a></li>
+        <li ><a href="content_view.html">View articles</a></li>
+        <li><a href="content_news.html">View News</a></li>
         <li><a href="content_report.html">Reports</a></li>
         <li><a href="../logout.php">log out</a></li>
       </ul>
@@ -74,13 +74,13 @@
       <ul class="nav nav-pills nav-stacked">
         <li ><a href="home.html">Dashboard</a></li>
         <li><a href="application.php">Applications</a></li>
-        <li><a href="joat_user.html">Users</a></li>
-        <li><a href="asset.html">Assets</a></li>
+        <li class="active"><a href="joat_user.html">Users</a></li>
+        <li ><a href="asset.html">Assets</a></li>
         <li ><a href="content_add.html">Create Content</a></li>
-        <li><a href="content_view.html">View articles</a></li>
-        <li class="active"><a href="content_news.html">View News</a></li>
+        <li ><a href="content_view.html">View articles</a></li>
+        <li><a href="content_news.html">View News</a></li>
         <li><a href="content_report.html">Reports</a></li>
-        <li><a href="../logout.php">log out</a></li>
+        <li><a href="../logout.html">log out</a></li>
       </ul><br>
     </div>
 <br>
@@ -90,12 +90,42 @@
         <p>Some text..</p>
       </div>
     <div class="container">
-      <h2 id="Joat_head">JOAT news view</h2>
+      <h2 id="Joat_head">JOAT user</h2>
+
+<form action="" method="POST">
+  <div class="form-group">
+    <label id='lbl' for="name">Name:</label>
+    <div class="input-group">
+    <span class="input-group-addon">Name</span>
+    <input type="text" class="form-control" id="name" placeholder="Enter name" name="name" size="10">
+  </div></div>
+
+  <div class="form-group">
+    <label id='lbl' for="username">username:</label>
+    <div class="input-group">
+    <span class="input-group-addon">Username</span>
+    <input type="text" class="form-control" id="uname" placeholder="Enter username" name="uname" size="10">
+  </div></div>
+
+  <div class="form-group">
+    <label id='lbl_5' for="sel1">Account Type (select one):</label>
+    <div class="input-group">
+    <span class="input-group-addon"><i class="glyphicon glyphicon-pencil"data-toggle="tooltip" title="Select account type" ></i></span>
+    <select class="form-control" id="sel1" name='acc_type'>
+      <option value='content creator'>content creator</option>
+      <option value ='Moderator'>Moderator</option>
+      <option value ='Broker'>Broker</option>
+
+    </select>
+    <br>
 
 
+  </div></div>
 
+<br>
 
-
+  <button type="submit" class="btn btn-default">Submit</button>
+</form><br>
 
 </div>
 </div>
