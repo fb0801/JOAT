@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>JOAT | Login</title>
+  <title>JOAT | Investment</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" type="text/css" href="web_app.css"> <!--own stylesheet-->
@@ -15,11 +15,16 @@
 </head>
 <body>
 
-  <div class="dif">
+  <div class="alert alert-danger alert-dismissible fade in text-center">
+      <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+      <strong>Danger!</strong> Your captial might be at risk when it comes to investing.
+    </div>
 
+  <div class="dif">
   <a href="index.html"><img class ="logo" src="image/logo2.jpg" alt="Logo" title="return to mainpage"></a>
 <br><br><br><br>
 </div>
+
 
 <nav class="navbar navbar-inverse">
   <div class="container-fluid">
@@ -34,7 +39,7 @@
     <div class="collapse navbar-collapse" id="myNavbar">
       <ul class="nav navbar-nav">
         <li ><a href="index.html">Home</a></li>
-        <li><a href="invest.php">Investment</a></li>
+        <li class="active"><a href="invest.php">Investment</a></li>
       <li><a href="card.php">Card Companies</a></li>
       <li><a href="news.php">News</a></li>
       <li><a href="article.php">Articles</a></li>
@@ -45,7 +50,7 @@
     </ul>
 
 
-       <form class="navbar-form navbar-right" action="/action_page.php">
+       <form class="navbar-form navbar-right" action="">
       <div class="input-group">
         <input type="text" class="form-control" placeholder="Search" name="search">
         <div class="input-group-btn">
@@ -57,41 +62,28 @@
     </form>
      <ul class="nav navbar-nav navbar-right">
        <li><a href="#" onclick="changesize()" ondblclick="changeback()"><span class="glyphicon glyphicon-text-size"  title="change text size"></span></a></li>
-       <li><a href="#" onclick="changeBGC('#000000')" ondblclick="changeBGC('#ffffff')"><span  class="glyphicon glyphicon-adjust"  title="change background and text colour"></span></a></li>
+       <li><a href="#" onclick="changeBGC('#000000')" ondblclick="changeBGC('#ffffff')"><span  class="glyphicon glyphicon-adjust" title="change background and text colour"></span></a></li>
       <li><a href="signup.html"><span class="glyphicon glyphicon-user" title="Make account"></span> Sign Up</a></li>
-      <li class="active"><a href="login.html"><span class="glyphicon glyphicon-log-in" title="Login"></span> Login</a></li>
+      <li><a href="login.html"><span class="glyphicon glyphicon-log-in" title="Login"></span> Login</a></li>
     </ul>
   </div>  </div>
 </nav>
 
+
 <div class="container">
-  <h2 id="head_login">JOAT Login</h2>
-  <form action="includes/joatlogin.php" method="POST">
+  <h2 id="Joat_head">JOAT Investment</h2>
 
-    <div class="form-group">
-      <label id='lbl_email' for="email">Username:</label>
-      <div class="input-group">
-      <span class="input-group-addon"><i class="glyphicon glyphicon-envelope"></i></span>
-      <input type="text" class="form-control" id="username" placeholder="Enter email or username" name="uid">
-    </div></div>
 
-    <div class="form-group">
-      <label id='lbl_pwd' for="pwd">Password:</label>
-      <div class="input-group">
-      <span class="input-group-addon"><i class="glyphicon glyphicon-briefcase"></i></span>
-      <input type="password" class="form-control" id="pwd" placeholder="Enter password" name="pwd">
-    </div></div>
 
-    <button type="submit" class="btn btn-default">Submit</button>
-  </form>
+
 </div>
 
 
-  <div class="bottom_sec">
-    <footer>
-  <p>&copy; This is a demonstration website for LSBU (London Southbank University) all images and text are from, Yahoo finance, Google finance, Blackrock, Ishares, Vanguard and my own blog</p>
-  </footer>
-  </div>
+<div class="bottom_sec">
+  <footer>
+<p>&copy; This is a demonstration website for LSBU (London Southbank University) all images and text are from, Yahoo finance, Google finance, Blackrock, Ishares, Vanguard and my own blog</p>
+</footer>
+</div>
 
 <button onclick="topfunc()" id="mybtn" title="Go to top"><span class="glyphicon glyphicon-chevron-up"></span></button>
 
@@ -102,17 +94,20 @@ var mybutton = document.getElementById("mybtn");
 function changeBGC(color){
 if (color=='#000000'){
 		document.body.style.backgroundColor = color;
-    document.getElementById('head_login').style.color="white";
-    document.getElementById('lbl_pwd').style.color="white";
-    document.getElementById('lbl_email').style.color="white";
+    document.getElementById('lbl_6').style.color="white";
+    document.getElementById('lbl_3_email').style.color="white";
+    document.getElementById('lbl_5_contact').style.color="white";
+    document.getElementById('Joat_head').style.color='white';
+
 
 
 	}else{
     //change element colour back
 		document.body.style.backgroundColor = color;
-    document.getElementById('head_login').style.color="black";
-    document.getElementById('lbl_pwd').style.color="black";
-    document.getElementById('lbl_email').style.color="black";
+    document.getElementById('lbl_6').style.color="black";
+    document.getElementById('lbl_3_email').style.color="black";
+    document.getElementById('lbl_5_contact').style.color="black";
+    document.getElementById('Joat_head').style.color='black';
 
 
   }}
