@@ -1,3 +1,6 @@
+<?php
+require_once('../includes/dbutils.php');
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -51,11 +54,11 @@
     <div class="collapse navbar-collapse" id="myNavbar">
       <ul class="nav navbar-nav">
         <li ><a href="home.html">Dashboard</a></li>
-        <li><a href="application.php">Applications</a></li>
+        <li ><a href="application.php">Applications</a></li>
         <li><a href="joat_user.html">Users</a></li>
-        <li><a href="asset.html">Assets</a></li>
+        <li ><a href="asset.html">Assets</a></li>
         <li ><a href="content_add.html">Create Content</a></li>
-        <li><a href="content_view.html">View articles</a></li>
+        <li ><a href="content_view.html">View articles</a></li>
         <li><a href="content_news.html">View News</a></li>
         <li class="active"><a href="content_report.html">Reports</a></li>
         <li><a href="../logout.php">log out</a></li>
@@ -73,14 +76,14 @@
 
       <ul class="nav nav-pills nav-stacked">
         <li ><a href="home.html">Dashboard</a></li>
-        <li><a href="application.php">Applications</a></li>
+        <li ><a href="application.php">Applications</a></li>
         <li><a href="joat_user.html">Users</a></li>
         <li><a href="asset.html">Assets</a></li>
         <li ><a href="content_add.html">Create Content</a></li>
-        <li><a href="content_view.html">View articles</a></li>
+        <li ><a href="content_view.html">View articles</a></li>
         <li><a href="content_news.html">View News</a></li>
         <li class="active"><a href="content_report.html">Reports</a></li>
-        <li><a href="../logout.php">log out</a></li>
+        <li><a href="../logout.html">log out</a></li>
       </ul><br>
     </div>
 <br>
@@ -90,21 +93,24 @@
         <p>Some text..</p>
       </div>
     <div class="container">
-      <h2 id="Joat_head">JOAT Reports</h2>
+      <h2 id="Joat_head">JOAT contact</h2>
+
+
+<?php
+//connect to the databse to show all JOAT feedback
+$pdo =connect();
+htmlTable( $pdo, 'joat_contact');
+
+
+
+print"<div class='col-sm-4'>
+<a href='content_report.html'><button type='button' class='btn btn-primary btn-lg'>back</button></a>
+</div>";
+?>
+
+
+
 </div>
-
-<div class="col-sm-4">
-<a href="#"><button type="button" class="btn btn-primary btn-lg">View reports</button></a>
-</div>
-
-<div class="col-sm-4">
-<a href="joat_feedback.php"><button type="button" class="btn btn-primary btn-lg">view feedback</button></a>
-</div>
-
-<div class="col-sm-3">
-  <a href="joat_contact.php"><button type="button" class="btn btn-primary btn-lg">view contact</button</a></div>
-
-
 </div>
 </div>
 
