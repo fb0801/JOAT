@@ -1,7 +1,11 @@
+<?php
+  require_once( 'includes/dbutils.php');
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>JOAT | Feedback</title>
+  <title>JOAT | Apply</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" type="text/css" href="web_app.css"> <!--own stylesheet-->
@@ -21,7 +25,6 @@
 <br><br><br><br>
 </div>
 
-
 <nav class="navbar navbar-inverse">
   <div class="container-fluid">
     <div class="navbar-header">
@@ -39,14 +42,14 @@
       <li><a href="card.php">Card Companies</a></li>
       <li><a href="news.php">News</a></li>
       <li><a href="article.php">Articles</a></li>
-      <li><a href="apply.php">Apply</a></li>
+      <li class="active"><a href="apply.php">Apply</a></li>
       <li><a href="about_us.html">About us</a></li>
       <li><a href="contact.html">Contact us</a></li>
-      <li class="active"><a href="feedback.html">Feedback</a></li>
+      <li><a href="feedback.html">Feedback</a></li>
     </ul>
 
 
-       <form class="navbar-form navbar-right" action="">
+       <form class="navbar-form navbar-right" action="/action_page.php">
       <div class="input-group">
         <input type="text" class="form-control" placeholder="Search" name="search">
         <div class="input-group-btn">
@@ -58,43 +61,65 @@
     </form>
      <ul class="nav navbar-nav navbar-right">
        <li><a href="#" onclick="changesize()" ondblclick="changeback()"><span class="glyphicon glyphicon-text-size"  title="change text size"></span></a></li>
-       <li><a href="#" onclick="changeBGC('#000000')" ondblclick="changeBGC('#ffffff')"><span class="glyphicon glyphicon-adjust"  title="change background and text colour"></span></a></li>
-      <li><a href="signup.html"><span class="glyphicon glyphicon-user" title="Make account"></span> Sign Up</a></li>
+       <li><a href="#" onclick="changeBGC('#000000')" ondblclick="changeBGC('#ffffff')"><span  class="glyphicon glyphicon-adjust"  title="change background and text colour"></span></a></li>
+      <li ><a href="signup.html"><span class="glyphicon glyphicon-user" title="Make account"></span> Sign Up</a></li>
       <li><a href="login.html"><span class="glyphicon glyphicon-log-in" title="Login"></span> Login</a></li>
     </ul>
   </div>  </div>
 </nav>
 
+
+
 <div class="container">
-  <h2 id="Joat_head">JOAT Feedback</h2>
-  <form action="includes/feedback.php" method="POST">
+  <h2 id="Joat_head">JOAT Apply</h2>
+  <form action="joat_app_2.php" method="POST">
     <div class="form-group">
       <label id='lbl' for="name">Name:</label>
       <div class="input-group">
       <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-      <input type="text" class="form-control" id="name" placeholder="Enter your name" name="fdname">
+      <input type="text" class="form-control" id="name" placeholder="Enter your name" name="name">
     </div></div>
 
-
     <div class="form-group">
-      <label id='lbl_3_3' for="email">Email:</label>
+      <label id='lbl_3' for="email">Email:</label>
       <div class="input-group">
       <span class="input-group-addon"><i class="glyphicon glyphicon-envelope"></i></span>
       <input type="email" class="form-control" id="email" placeholder="Enter email" name="email">
     </div></div>
-    <textarea rows="10" cols="50" name="message"></textarea><br>
-
-<button type="submit" class="btn btn-default">Submit</button>
-    </div>
 
 
-  </form>
+    <div class="form-group">
+      <label id='lbl_5' for="sel1">Position (select one):</label>
+      <div class="input-group">
+      <span class="input-group-addon"><i class="glyphicon glyphicon-user"data-toggle="tooltip" title="Select the position you would like to apply for" ></i></span>
+      <select class="form-control" id="sel1" name='acc_type'>
+        <option value='content creator'>Content creator</option>
+        <option value ='admin'>Admin</option>
+        <option value='Moderator'>Moderator</option>
+        <option  value='Broker'>Broker</option>
 
-<div class="bottom_sec">
-  <footer>
-<p>&copy; This is a demonstration website for LSBU (London Southbank University) all images and text are from, Yahoo finance, Google finance, Blackrock, Ishares, Vanguard and my own blog</p>
-</footer>
+      </select>
+      <br>
+
+
+    </div></div>
+
+
+    <button type="submit" class="btn btn-default">Submit</button>
+  </form><br>
+
+  <div class="container-fluid  text-left">
+    <p>Apply for any of the roles that we are currently offering above along with your name and email</p>
+  </div>
+
 </div>
+
+
+  <div class="bottom_sec">
+    <footer>
+  <p>&copy; This is a demonstration website for LSBU (London Southbank University) all images and text are from, Yahoo finance, Google finance, Blackrock, Ishares, Vanguard and my own blog</p>
+  </footer>
+  </div>
 
 <button onclick="topfunc()" id="mybtn" title="Go to top"><span class="glyphicon glyphicon-chevron-up"></span></button>
 
@@ -102,24 +127,6 @@
 //Get the button
 var mybutton = document.getElementById("mybtn");
 
-function changeBGC(color){
-if (color=='#000000'){
-		document.body.style.backgroundColor = color;
-    document.getElementById('lbl').style.color='white';
-    document.getElementById('Joat_head').style.color='white';
-    document.getElementById('lbl_3_3').style.color="white";
-
-
-	}else{
-    //change element colour back
-		document.body.style.backgroundColor = color;
-    document.getElementById('lbl').style.color='black';
-    document.getElementById('Joat_head').style.color='black';
-    document.getElementById('lbl_3_3').style.color="black";
-
-
-
-  }}
 </script>
 </body>
 </html>

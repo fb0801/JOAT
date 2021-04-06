@@ -1,7 +1,8 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>JOAT | About us</title>
+  <title>JOAT | Article</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" type="text/css" href="web_app.css"> <!--own stylesheet-->
@@ -37,9 +38,9 @@
       <li><a href="invest.php">Investment</a></li>
     <li><a href="card.php">Card Companies</a></li>
     <li><a href="news.php">News</a></li>
-    <li><a href="article.php">Articles</a></li>
+    <li class="active"><a href="article.php">Articles</a></li>
     <li><a href="apply.php">Apply</a></li>
-    <li class="active"><a href="about_us.html">About us</a></li>
+    <li><a href="about_us.html">About us</a></li>
     <li><a href="contact.html">Contact us</a></li>
     <li><a href="feedback.html">Feedback</a></li>
   </ul>
@@ -65,8 +66,8 @@
 </nav>
 
 
-<div class="container">
-<h2 id="Joat_head">About us</h2>
+<div class="container text-left">
+<h2 id="Joat_head">Articles</h2>
 
 
 
