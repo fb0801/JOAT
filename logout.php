@@ -1,3 +1,7 @@
+<?php
+include 'includes/joat_session.php';
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -69,7 +73,7 @@
 </nav>
 
 <?php
-//session_unset();
+session_unset();
 session_destroy();
 ?>
 

@@ -71,7 +71,11 @@
 
 <div class="container text-left">
 <h2 id="Joat_head">News</h2>
+<?php
+require_once('includes/articledisplay.php');
+JoatNewsDisplay();
 
+?>
 
 
 

@@ -70,7 +70,7 @@
 <h2 id="Joat_head">Articles</h2>
 
 <?php
-require_once('../includes/articledisplay.php');
+require_once('includes/articledisplay.php');
 JoatArticleDisplay();
 
 
