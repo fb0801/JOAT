@@ -83,7 +83,7 @@ require_once('../includes/dbutils.php');
         <li ><a href="content_view.html">View articles</a></li>
         <li><a href="content_news.html">View News</a></li>
         <li class="active"><a href="content_report.html">Reports</a></li>
-        <li><a href="../logout.html">log out</a></li>
+        <li><a href="../logout.php">log out</a></li>
       </ul><br>
     </div>
 <br>

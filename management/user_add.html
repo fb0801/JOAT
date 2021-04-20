@@ -1,3 +1,5 @@
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -44,19 +46,19 @@
         <span class="icon-bar"></span>
       </button>
 
-      <a href="home.html"><img class ="logo" src="../image/logo2.jpg" alt="Logo" title="return to mainpage"></a>
+      <a href="home.php"><img class ="logo" src="../image/logo2.jpg" alt="Logo" title="return to mainpage"></a>
 
     </div>
     <!--content for collapse narbar-->
     <div class="collapse navbar-collapse" id="myNavbar">
       <ul class="nav navbar-nav">
-        <li ><a href="home.html">Dashboard</a></li>
+        <li ><a href="home.php">Dashboard</a></li>
         <li><a href="application.php">Applications</a></li>
         <li class="active"><a href="joat_user.html">Users</a></li>
         <li ><a href="asset.html">Assets</a></li>
         <li ><a href="content_add.html">Create Content</a></li>
-        <li ><a href="content_view.html">View articles</a></li>
-        <li><a href="content_news.html">View News</a></li>
+        <li ><a href="content_view.php">View articles</a></li>
+        <li><a href="content_news.php">View News</a></li>
         <li><a href="content_report.html">Reports</a></li>
         <li><a href="../logout.php">log out</a></li>
       </ul>
@@ -68,7 +70,7 @@
   <div class="row content">
 
     <div class="col-sm-3 sidenav hidden-xs">
-      <div class="space"><a href="home.html"><img class ="logo" src="../image/logo2.jpg" alt="Logo" title="return to mainpage"></a>
+      <div class="space"><a href="home.php"><img class ="logo" src="../image/logo2.jpg" alt="Logo" title="return to mainpage"></a>
       </div>
 
       <ul class="nav nav-pills nav-stacked">
@@ -80,7 +82,7 @@
         <li ><a href="content_view.html">View articles</a></li>
         <li><a href="content_news.html">View News</a></li>
         <li><a href="content_report.html">Reports</a></li>
-        <li><a href="../logout.html">log out</a></li>
+        <li><a href="../logout.php">log out</a></li>
       </ul><br>
     </div>
 <br>
@@ -92,7 +94,7 @@
     <div class="container">
       <h2 id="Joat_head">JOAT user</h2>
 
-<form action="" method="POST">
+<form action="adduser.php" method="POST">
   <div class="form-group">
     <label id='lbl' for="name">Name:</label>
     <div class="input-group">
@@ -104,7 +106,21 @@
     <label id='lbl' for="username">username:</label>
     <div class="input-group">
     <span class="input-group-addon">Username</span>
-    <input type="text" class="form-control" id="uname" placeholder="Enter username" name="uname" size="10">
+    <input type="text" class="form-control" id="uname" placeholder="Enter username" name="username" size="10">
+  </div></div>
+
+  <div class="form-group">
+    <label id='lbl_3' for="email">Email:</label>
+    <div class="input-group">
+    <span class="input-group-addon"><i class="glyphicon glyphicon-envelope"></i></span>
+    <input type="email" class="form-control" id="email" placeholder="Enter email" name="email">
+  </div></div>
+
+  <div class="form-group">
+    <label id='lbl_4' for="pwd">Password:</label>
+    <div class="input-group">
+    <span class="input-group-addon"><i class="glyphicon glyphicon-briefcase"></i></span>
+    <input type="password" class="form-control" id="pwd" placeholder="Enter password" name="pwd">
   </div></div>
 
   <div class="form-group">
@@ -115,6 +131,7 @@
       <option value='content creator'>content creator</option>
       <option value ='Moderator'>Moderator</option>
       <option value ='Broker'>Broker</option>
+      <option value ='management'>management</option>
 
     </select>
     <br>

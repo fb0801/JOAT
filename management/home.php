@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <head>
-  <title>JOAT | user</title>
+  <title>JOAT | Management Home</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -44,18 +44,17 @@
         <span class="icon-bar"></span>
       </button>
 
-      <a href="../home.html"><img class ="logo" src="../image/logo2.jpg" alt="Logo" title="return to mainpage"></a>
+      <a href="home.html"><img class ="logo" src="../image/logo2.jpg" alt="Logo" title="return to mainpage"></a>
 
     </div>
-    <!--content for collapse narbar-->
     <div class="collapse navbar-collapse" id="myNavbar">
       <ul class="nav navbar-nav">
-        <li ><a href="home.html">Dashboard</a></li>
+        <li class="active"><a href="home.html">Dashboard</a></li>
         <li><a href="application.php">Applications</a></li>
-        <li class="active"><a href="joat_user.html">Users</a></li>
-        <li class><a href="asset.html">Assets</a></li>
+        <li><a href="joat_user.html">Users</a></li>
+        <li><a href="asset.html">Assets</a></li>
         <li ><a href="content_add.html">Create Content</a></li>
-        <li ><a href="content_view.html">View articles</a></li>
+        <li><a href="content_view.html">View articles</a></li>
         <li><a href="content_news.html">View News</a></li>
         <li><a href="content_report.html">Reports</a></li>
         <li><a href="../logout.php">log out</a></li>
@@ -70,55 +69,99 @@
     <div class="col-sm-3 sidenav hidden-xs">
       <div class="space"><a href="home.html"><img class ="logo" src="../image/logo2.jpg" alt="Logo" title="return to mainpage"></a>
       </div>
-
       <ul class="nav nav-pills nav-stacked">
-        <li ><a href="home.html">Dashboard</a></li>
+        <li class="active"><a href="home.html">Dashboard</a></li>
         <li><a href="application.php">Applications</a></li>
-        <li class="active"><a href="joat_user.html">Users</a></li>
-        <li ><a href="asset.html">Assets</a></li>
+        <li><a href="joat_user.html">Users</a></li>
+        <li><a href="asset.html">Assets</a></li>
         <li ><a href="content_add.html">Create Content</a></li>
-        <li ><a href="content_view.html">View articles</a></li>
+        <li><a href="content_view.html">View articles</a></li>
         <li><a href="content_news.html">View News</a></li>
         <li><a href="content_report.html">Reports</a></li>
         <li><a href="../logout.php">log out</a></li>
       </ul><br>
     </div>
-<br>
+    <br>
+
     <div class="col-sm-9">
       <div class="well">
         <h4>Dashboard</h4>
         <p>Some text..</p>
       </div>
-    <div class="container">
-      <h2 id="Joat_head">JOAT user</h2>
-
-
-      <div class="col-sm-4">
-      <a href="user_add.html"><button type="button" class="btn btn-primary btn-lg">Add user</button></a>
+      <div class="row">
+        <div class="col-sm-3">
+          <div class="well">
+            <h4>Users</h4>
+            <p>1 Million</p>
+          </div>
+        </div>
+        <div class="col-sm-3">
+          <div class="well">
+            <h4>Pages</h4>
+            <p>100 Million</p>
+          </div>
+        </div>
+        <div class="col-sm-3">
+          <div class="well">
+            <h4>Sessions</h4>
+            <p>10 Million</p>
+          </div>
+        </div>
+        <div class="col-sm-3">
+          <div class="well">
+            <h4>Bounce</h4>
+            <p>30%</p>
+          </div>
+        </div>
       </div>
-
-      <div class="col-sm-4">
-      <a href=""><button type="button" class="btn btn-primary btn-lg">Remove user</button></a>
+      <div class="row">
+        <div class="col-sm-4">
+          <div class="well">
+            <p>Text</p>
+            <p>Text</p>
+            <p>Text</p>
+          </div>
+        </div>
+        <div class="col-sm-4">
+          <div class="well">
+            <p>Text</p>
+            <p>Text</p>
+            <p>Text</p>
+          </div>
+        </div>
+        <div class="col-sm-4">
+          <div class="well">
+            <p>Text</p>
+            <p>Text</p>
+            <p>Text</p>
+          </div>
+        </div>
       </div>
+      <div class="row">
+        <div class="col-sm-8">
+          <div class="well">
+            <p>Text</p>
+          </div>
+        </div>
 
-
-</div>
-</div>
-</div>
-
-
-    <div class="bottom_sec">
-      <footer>
-    <p>&copy; This is a demonstration website for LSBU (London Southbank University) all images and text are from, Yahoo finance, Google finance, Blackrock, Ishares, Vanguard and my own blog</p>
-    </footer>
+      </div>
     </div>
+  </div>
+</div>
 
-    <button onclick="topfunc()" id="mybtn" title="Go to top"><span class="glyphicon glyphicon-chevron-up"></span></button>
 
-    <script>
-    //Get the button
-    var mybutton = document.getElementById("mybtn");
+<div class="bottom_sec">
+  <footer>
+<p>&copy; This is a demonstration website for LSBU (London Southbank University) all images and text are from, Yahoo finance, Google finance, Blackrock, Ishares, Vanguard and my own blog</p>
+</footer>
+</div>
 
-    </script>
-    </body>
-    </html>
+<button onclick="topfunc()" id="mybtn" title="Go to top"><span class="glyphicon glyphicon-chevron-up"></span></button>
+
+<script>
+//Get the button
+var mybutton = document.getElementById("mybtn");
+
+</script>
+</body>
+</html>

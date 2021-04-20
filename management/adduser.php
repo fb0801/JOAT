@@ -44,7 +44,7 @@
         <span class="icon-bar"></span>
       </button>
 
-      <a href="../home.html"><img class ="logo" src="../image/logo2.jpg" alt="Logo" title="return to mainpage"></a>
+      <a href="home.html"><img class ="logo" src="../image/logo2.jpg" alt="Logo" title="return to mainpage"></a>
 
     </div>
     <!--content for collapse narbar-->
@@ -53,7 +53,7 @@
         <li ><a href="home.html">Dashboard</a></li>
         <li><a href="application.php">Applications</a></li>
         <li class="active"><a href="joat_user.html">Users</a></li>
-        <li class><a href="asset.html">Assets</a></li>
+        <li ><a href="asset.html">Assets</a></li>
         <li ><a href="content_add.html">Create Content</a></li>
         <li ><a href="content_view.html">View articles</a></li>
         <li><a href="content_news.html">View News</a></li>
@@ -91,34 +91,60 @@
       </div>
     <div class="container">
       <h2 id="Joat_head">JOAT user</h2>
+<?php
+$username = 'Farhan';
+$password = 'Farhan3712356';
+$servername = 'localhost';
+$dbname = 'joat_project';
 
 
-      <div class="col-sm-4">
-      <a href="user_add.html"><button type="button" class="btn btn-primary btn-lg">Add user</button></a>
-      </div>
+try {
+  $conn = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password);
+  // set the PDO error mode to exception
+  $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
-      <div class="col-sm-4">
-      <a href=""><button type="button" class="btn btn-primary btn-lg">Remove user</button></a>
-      </div>
+     $firstname = $_POST['name'];
+     $Uname = $_REQUEST['username'];
+     $email = $_REQUEST['email'];
+     $password = $_REQUEST['pwd'];
+     $app_type=$_REQUEST['acc_type'];
+
+    $hash=password_hash($password, PASSWORD_DEFAULT);
+    $check=htmlspecialchars($Uname);
+  	$check_2=htmlspecialchars($email);
+
+  $sql = "INSERT INTO joat_user (user_first, user_uid, user_email, user_pwd, user_type)
+  	values('$firstname','$check','$check_2','$hash','$app_type')";
 
 
+
+  // use exec() because no results are returned
+  $conn->exec($sql);
+  echo "New record created successfully";
+  echo "<div class='col-sm-4'>
+  <a href='joat_user.html'><button type='button' class='btn btn-primary btn-lg'>Home</button></a>
+  </div>";
+
+} catch(PDOException $e) {
+  echo $sql . "<br>" . $e->getMessage();
+}
+
+$conn = null;
+?>
+</div></div>
+</div></div>
+<div class="bottom_sec">
+  <footer>
+<p>&copy; This is a demonstration website for LSBU (London Southbank University) all images and text are from, Yahoo finance, Google finance, Blackrock, Ishares, Vanguard and my own blog</p>
+</footer>
 </div>
-</div>
-</div>
 
+<button onclick="topfunc()" id="mybtn" title="Go to top"><span class="glyphicon glyphicon-chevron-up"></span></button>
 
-    <div class="bottom_sec">
-      <footer>
-    <p>&copy; This is a demonstration website for LSBU (London Southbank University) all images and text are from, Yahoo finance, Google finance, Blackrock, Ishares, Vanguard and my own blog</p>
-    </footer>
-    </div>
+<script>
+//Get the button
+var mybutton = document.getElementById("mybtn");
 
-    <button onclick="topfunc()" id="mybtn" title="Go to top"><span class="glyphicon glyphicon-chevron-up"></span></button>
-
-    <script>
-    //Get the button
-    var mybutton = document.getElementById("mybtn");
-
-    </script>
-    </body>
-    </html>
+</script>
+</body>
+</html>

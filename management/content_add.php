@@ -57,8 +57,8 @@ include '../includes/joat_session.php';
           <li ><a href="home.html">Dashboard</a></li>
           <li><a href="application.php">Applications</a></li>
           <li><a href="joat_user.html">Users</a></li>
-          <li class="active"><a href="asset.html">Assets</a></li>
-          <li ><a href="content_add.html">Create Content</a></li>
+          <li ><a href="asset.html">Assets</a></li>
+          <li class="active"><a href="content_add.html">Create Content</a></li>
           <li ><a href="content_view.html">View articles</a></li>
           <li><a href="content_news.html">View News</a></li>
           <li><a href="content_report.html">Reports</a></li>
@@ -79,8 +79,8 @@ include '../includes/joat_session.php';
           <li ><a href="home.html">Dashboard</a></li>
           <li><a href="application.php">Applications</a></li>
           <li><a href="joat_user.html">Users</a></li>
-          <li class="active"><a href="asset.html">Assets</a></li>
-          <li ><a href="content_add.html">Create Content</a></li>
+          <li ><a href="asset.html">Assets</a></li>
+          <li class="active"><a href="content_add.html">Create Content</a></li>
           <li ><a href="content_view.html">View articles</a></li>
           <li><a href="content_news.html">View News</a></li>
           <li><a href="content_report.html">Reports</a></li>
@@ -94,45 +94,29 @@ include '../includes/joat_session.php';
         <p>Some text..</p>
       </div>
     <div class="container">
-      <h2 id="Joat_head">JOAT Asset</h2>
-      <form action="" method="POST">
+      <h2 id="Joat_head">JOAT content</h2>
+      <form action="includes/createcontent.php" method="POST">
         <div class="form-group">
           <label id='lbl' for="name">Title:</label>
           <div class="input-group">
           <span class="input-group-addon">Title</span>
-          <input type="text" class="form-control" id="name" placeholder="Enter investment name" name="name" size="10">
+          <input type="text" class="form-control" id="name" placeholder="Enter your content title" name="name" size="10">
         </div></div>
 
         <div class="form-group">
-          <label id='lbl' for="name">Ticker:</label>
+          <label id='lbl_3' for="image">Image</label>
           <div class="input-group">
-          <span class="input-group-addon">Ticker</span>
-          <input type="text" class="form-control" id="name" placeholder="Enter ticker name e.g. EMIM" name="joat_ticker" size="10">
+          <span class="input-group-addon"><i class="glyphicon glyphicon-picture"></i></span>
+          <input type="file" class="form-control" id="myFile" name="filename"placeholder="select your image">
         </div></div>
 
         <div class="form-group">
-          <label id='lbl_5' for="sel1">Investment Type (select one):</label>
+          <label id='lbl_5' for="sel1">Content Type (select one):</label>
           <div class="input-group">
-          <span class="input-group-addon"><i class="glyphicon glyphicon-pencil"data-toggle="tooltip" title="Select the investment type" ></i></span>
-          <select class="form-control" id="sel1" name='invest_type'>
-            <option value='ETF'>ETF</option>
-            <option value ='Share'>Share</option>
-            <option value ='Bond'>Bond</option>
-
-          </select>
-          <br>
-
-
-        </div></div>
-
-        <div class="form-group">
-          <label id='lbl_5' for="sel1">Investment status(select one):</label>
-          <div class="input-group">
-          <span class="input-group-addon"><i class="glyphicon glyphicon-pencil"data-toggle="tooltip" title="Select the investment status" ></i></span>
-          <select class="form-control" id="sel1" name='invest_status'>
-            <option value ='asset_en'>Enabled</option>
-            <option value ='asset_dis'>disabled</option>
-
+          <span class="input-group-addon"><i class="glyphicon glyphicon-pencil"data-toggle="tooltip" title="Select the content type you would like to create" ></i></span>
+          <select class="form-control" id="sel1" name='content_type'>
+            <option value='News'>News</option>
+            <option value ='Article'>Article</option>
 
           </select>
           <br>
@@ -140,26 +124,18 @@ include '../includes/joat_session.php';
 
         </div></div>
         <div class="form-group">
-          <label id='lbl_5' for="sel1">Market</label>
+          <label id='lbl' for="text preview"></label>
           <div class="input-group">
-          <span class="input-group-addon"><i class="glyphicon glyphicon-pencil"data-toggle="tooltip" title="Select the investment status" ></i></span>
-          <select class="form-control" id="sel1" name='invest_status'>
-            <option value ='NYSE'>NYSE</option>
-            <option value ='LSE'>LSE</option>
-            <option value ='DBX'>DBX</option>
-            <option value ='SSE'>SSE</option>
-
-        </select>
-          <br>
-
+          <span class="input-group-addon">Preview text</span>
+          <textarea name="pre_txt" rows="5" cols="50"></textarea>
 
         </div></div>
-
         <div class="form-group">
-          <label id='lbl' for="name">Price:</label>
+          <label id='lbl' for="text preview"></label>
           <div class="input-group">
-          <span class="input-group-addon">Price</span>
-          <input type="text" class="form-control" id="name" placeholder="Price" name="joat_price" size="10">
+          <span class="input-group-addon">Content text</span>
+          <textarea name="content_txt" rows="5" cols="50"></textarea>
+
         </div></div>
 <br>
 
