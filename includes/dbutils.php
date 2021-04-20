@@ -5,7 +5,7 @@ function connect() {
    $username = 'Farhan';
   $password = 'Farhan3712356';
   $mysqlhost = 'localhost';
-  $dbname = 'joat';
+  $dbname = 'joat_project';
   $pdo = new PDO('mysql:host='.$mysqlhost.';dbname='.$dbname.';charset=utf8', $username, $password);
   if ( $pdo) {
     // make errors throw exceptions
@@ -116,6 +116,45 @@ print"<th></th>";
 
 }
 
+function htmlTable_3( $pdo, $table) {
+  $sql = "DESCRIBE `".$table."`";
+  $stmt = $pdo->query( $sql);
+  print "<table>";
+
+  print "<tr>";
+
+  foreach( $stmt as $v) {
+
+    print "<th>".$v['Field']."</th>";
+
+  }
+
+  print "</tr>";
+  $sql = "SELECT * FROM `".$table."`";
+
+  // specify only an associative array to be returned
+  $stmt = $pdo->query( $sql, PDO::FETCH_ASSOC);
+
+  foreach( $stmt as $row) {
+
+    print "<tr>";
+
+    foreach( $row as $v) {
+
+      print "<td>".$v."</td>";
+
+    }
+	  print("<td><a class='edit_link_3'href='?deletionid=".$row['contentID']."' class='link'>Delete</a></td>");
+	print("<td><a class='edit_link_4'href='content_update.php?cid=$row[contentID]&ct=$row[contentTitle]&csd=$row[contentshortDescription]&jcd=$row[contentDescription]&jmt=$row[joat_made_content]'>Edit</a></td>");
+            
+    print "</tr>";
+
+  }
+	//
+  print "</table>";
+
+}
+
 function deleteRecord_2( $pdo, $deletionid) {
 //delete a record from the table list
  $errorMessage = "";
@@ -136,4 +175,29 @@ function deleteRecord_2( $pdo, $deletionid) {
   }
   return $errorMessage;
 }
+
+/*function uidExists($pdo, $joatusername){
+  $sql="SELECT * from joat_user WHERE user_uid =?;";
+  $stmt =mysqli_stmt_init($pdo);
+}
+
+
+function joatlogin($pdo, $joatuser, $joatpwd){
+if (){
+  echo"Either username or password do not match please try again";
+  echo"<a href='../login.html'><button type='button' class='btn btn-primary btn-lg' >return to Login</button></a>";
+}
+  $hashpwd= $uidExists['user_pwd'];
+  $passwordchkd= password_verify($joatpwd,$hashpwd);
+
+  if($passwordchkd ===false){
+    echo"Either username or password do not match please try again";
+    echo"<a href='../login.html'><button type='button' class='btn btn-primary btn-lg' >return to Login</button></a>";
+  } elseif ($passwordchkd=== true) {
+    session_start();
+    $_SESSION["user_id"] = $uidExists['user_id'];
+    $_SESSION["user_uid"] = $uidExists['user_uid'];
+
+  }
+}*/
 ?>
