@@ -78,7 +78,7 @@ $dbname = 'joat';
 $dbServername= "localhost";
 $dbUsername ="root";
 $dbPassword="";
-$dbName = 'joat';
+$dbName = 'joat_project';
 
 $conn=mysqli_connect($dbServername, $dbUsername, $dbPassword, $dbName);
   if(isset($_POST['submit'])){

@@ -84,7 +84,7 @@ require_once "dbutils.php";
 $username = 'Farhan';
 $password = 'Farhan3712356';
 $servername = 'localhost';
-$dbname = 'joat';
+$dbname = 'joat_project';
 /*joat_2*/
 
 try {
@@ -93,7 +93,7 @@ try {
   $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
   // prepare sql and bind parameters
-  $stmt = $conn->prepare("INSERT INTO joat_contact (con_first,con_email,con_subject,con_text)
+  $stmt = $conn->prepare("INSERT INTO joat_contact (joatcon_first,joatcon_email,joatcon_subject,joatcon_text)
   VALUES (:fname,:email,:sub,:con_msg)");
 
 

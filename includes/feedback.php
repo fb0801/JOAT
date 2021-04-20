@@ -47,12 +47,12 @@ require_once "dbutils.php";
       <li><a href="../index.html">Home</a></li>
       <li><a href="../invest.html">Investment</a></li>
     <li><a href="../card.html">Card Companies</a></li>
-    <li class="active"><a href="../news.html">News</a></li>
+    <li ><a href="../news.html">News</a></li>
     <li><a href="../article.html">Articles</a></li>
     <li><a href="../apply.html">Apply</a></li>
     <li ><a href="../about_us.html">About us</a></li>
     <li ><a href="../contact.html">Contact us</a></li>
-    <li><a href="../feedback.html">Feedback</a></li>
+    <li class="active"><a href="../feedback.html">Feedback</a></li>
   </ul>
 
 
@@ -84,7 +84,7 @@ require_once "dbutils.php";
 $username = 'Farhan';
 $password = 'Farhan3712356';
 $servername = 'localhost';
-$dbname = 'joat_2';
+$dbname = 'joat_project';
 /*joat*/
 
 try {
@@ -93,7 +93,7 @@ try {
   $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
   // prepare sql and bind parameters
-  $stmt = $conn->prepare("INSERT INTO joat_feedback (con_first,con_email,con_text)
+  $stmt = $conn->prepare("INSERT INTO joat_feedback (joatfeed_name,joatfeed_email,joat_feed_msg)
   VALUES (:fname,:email,:con_msg)");
 
 
@@ -103,8 +103,8 @@ try {
 
   // insert a row
   $email = $_REQUEST['email'];
-  $msg=$_REQUEST['nam']
-  $name=$_REQUEST['name'];
+  $msg=$_REQUEST['message'];
+  $name=$_REQUEST['fdname'];
   $stmt->execute();
 
   // insert another row

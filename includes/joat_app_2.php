@@ -1,5 +1,5 @@
 <?php
-require_once "includes/dbutils.php";
+require_once "dbutils.php";
 ?>
 
 <!DOCTYPE html>
@@ -8,9 +8,9 @@ require_once "includes/dbutils.php";
   <title>JOAT | Apply</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" type="text/css" href="web_app.css"> <!--own stylesheet-->
-  <script type="text/javascript" src="web_app_js.js"></script> <!--own javascript file-->
-  <link rel="shortcut icon" type="image/x-icon" href="image/favicon.ico"> <!--adds a image to the title-->
+  <link rel="stylesheet" type="text/css" href="../web_app.css"> <!--own stylesheet-->
+  <script type="text/javascript" src="../web_app_js.js"></script> <!--own javascript file-->
+  <link rel="shortcut icon" type="image/x-icon" href="../image/favicon.ico"> <!--adds a image to the title-->
 
 <!--3 bootstrapcdn links-->
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
@@ -21,7 +21,7 @@ require_once "includes/dbutils.php";
 
   <div class="dif">
 
-  <a href="index.html"><img class ="logo" src="image/logo2.jpg" alt="Logo" title="return to mainpage"></a>
+  <a href="index.html"><img class ="logo" src="../image/logo2.jpg" alt="Logo" title="return to mainpage"></a>
 <br><br><br><br>
 </div>
 
@@ -33,19 +33,19 @@ require_once "includes/dbutils.php";
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="index.html">JOAT</a>
+      <a class="navbar-brand" href="../index.html">JOAT</a>
     </div>
     <div class="collapse navbar-collapse" id="myNavbar">
       <ul class="nav navbar-nav">
-        <li><a href="index.html">Home</a></li>
-        <li><a href="invest.html">Investment</a></li>
-      <li><a href="#">Card Companies</a></li>
-      <li><a href="news.html">News</a></li>
-      <li><a href="article.html">Articles</a></li>
-      <li class="active"><a href="apply.html">Apply</a></li>
-      <li><a href="about_us.html">About us</a></li>
-      <li><a href="contact.html">Contact us</a></li>
-      <li><a href="feedback.html">Feedback</a></li>
+        <li><a href="../index.html">Home</a></li>
+        <li><a href="../invest.html">Investment</a></li>
+      <li><a href="../card.html">Card Companies</a></li>
+      <li><a href="../news.html">News</a></li>
+      <li><a href="../article.html">Articles</a></li>
+      <li class="active"><a href="../apply.html">Apply</a></li>
+      <li><a href="../about_us.html">About us</a></li>
+      <li><a href="../contact.html">Contact us</a></li>
+      <li><a href="../feedback.html">Feedback</a></li>
     </ul>
 
 
@@ -62,8 +62,8 @@ require_once "includes/dbutils.php";
      <ul class="nav navbar-nav navbar-right">
        <li><a href="#" onclick="changesize()" ondblclick="changeback()"><span class="glyphicon glyphicon-text-size"  title="change text size"></span></a></li>
        <li><a href="#" onclick="changeBGC('#000000')" ondblclick="changeBGC('#ffffff')"><span  class="glyphicon glyphicon-adjust"  title="change background and text colour"></span></a></li>
-      <li ><a href="signup.html"><span class="glyphicon glyphicon-user" title="Make account"></span> Sign Up</a></li>
-      <li><a href="login.html"><span class="glyphicon glyphicon-log-in" title="Login"></span> Login</a></li>
+      <li ><a href="../signup.html"><span class="glyphicon glyphicon-user" title="Make account"></span> Sign Up</a></li>
+      <li><a href="../login.html"><span class="glyphicon glyphicon-log-in" title="Login"></span> Login</a></li>
     </ul>
   </div>  </div>
 </nav>
@@ -73,7 +73,7 @@ require_once "includes/dbutils.php";
 $username = 'Farhan';
 $password = 'Farhan3712356';
 $servername = 'localhost';
-$dbname = 'joat';
+$dbname = 'joat_project';
 
 
 try {

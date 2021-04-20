@@ -1,6 +1,7 @@
 <?php
 session_start();
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -80,102 +81,48 @@ $dbName="joat_project";
 
 $conn=mysqli_connect($dbServername, $dbUsername, $dbPassword,
 $dbName);
-
+  //gets the varaibles from the form
   $user= $_POST['uid'];
   $pass= $_POST['pwd'];
-  //$hash=password_verify($pass, );
-  //session_start();
 
-
-  //$sql="SELECT * FROM joat_user WHERE user_uid='$user' AND user_type='JOAT Invest'";
-  /*$sql_1="SELECT * FROM joat_user WHERE user_uid='$user' AND user_pwd='$hash' AND user_type='management'";
-  $sql_2="SELECT * FROM joat_user WHERE user_uid='$user' AND user_pwd='$hash' AND user_type='JOAT Account'";
-  $sql_3="SELECT * FROM joat_user where user_id='$user' AND user_pwd='$hash' AND user_type='moderator'";
-  $sql_4="SELECT * FROM joat_user where user_id='$user' AND user_pwd='$hash' AND user_type='creator'";*/
-
-
-  //$result=mysqli_query($conn,$sql);
-  /*$res=mysqli_query($conn,$sql_1);
-  $result_2=mysqli_query($conn,$sql_2);
-  $result_3=mysqli_query($conn,$sql_3);
-  $result_4=mysqli_query($conn,$sql_4);*/
-
-  /*$count=mysqli_num_rows($result);
-  $count_2=mysqli_num_rows($res);
-  $count_3=mysqli_num_rows($result_2);
-  $count_4=mysqli_num_rows($result_3);
-  $count_5=mysqli_num_rows($result_4);*/
-
-/*
-if(mysqli_num_rows($result)>0){
-  while ($row=mysqli_fetch_assoc($result)){
-    if(password_verify($pass,$row['user_id'])){
-      $user=$row['user_id'];
-      	header("location:trader/home.html");
-    }
-    else{
-      echo"Either username or password do not match please try again";
-    	echo"<a href='../login.html'><button type='button' class='btn btn-primary btn-lg' >return to Login</button></a>";
-    }
-  }
-}*/
-  /*if($count>0){
-
-		header("location:trader/home.html");
-  }elseif($count_2 >0){
-
-	  header ('location:management/home.html');
-
-  }elseif($count_3==1){
-  //elseif(mysqli_num_rows($result_2)>0){
-	  header("location:customer/index.html");
-  }elseif($count_4==1){
-    header('location:moderator/home.html');
-}elseif ($count_5==1) {
-  header('location:content_creator/home.html');
-
-}else{
-	  //header("location:mistake.php");
-	echo"Either username or password do not match please try again";
-	echo"<a href='../login.html'><button type='button' class='btn btn-primary btn-lg' >return to Login</button></a>";
-
-}*/
-  //}
-  //mysqli_close();
 
     //$sql ="SELECT * FROM joat_user WHERE user_uid= ?";
     $sql= $conn->prepare('SELECT user_id,user_uid,user_pwd,user_type FROM joat_user WHERE user_uid= ?');
-    $sql->bind_param('s',$user);
+    $sql->bind_param('s',$user);//assign the user as a string
     /*$result= $pdo->prepare($sql);
     $result->bindparam('s',$user);
     $result->execute();*/
-    $sql->execute();
+    $sql->execute(); //runs the query
     //$userrow =$result->fetch();
-    $sql->store_result();
-    $sql->bind_result($useri,$usern,$hshpwd,$u_type);
+    $sql->store_result();//store the result
+    $sql->bind_result($useri,$usern,$hshpwd,$u_type);//varaibes assigned to what we want to find from database
+
+    //check to see if it finds one result
     if ($sql->num_rows==1) {
-      $sql->fetch();
-//['user_pwd'] ['user_type']
+      $sql->fetch();//fetches the data
+
+//check what user entered against what is in the database for the password
     if (password_verify($pass,$hshpwd) && $u_type =='JOAT Invest') {
-      	header("location:../trader/home.php");
+      	header("location:../trader/home.html");
+        //assings different things for the session
         $_SESSION['uid']=$usern;
         $_SESSION['userid']=$useri;
     }elseif (password_verify($pass,$hshpwd) && $u_type=='JOAT Account') {
-      header("location:../customer/index.php");
-	  $_SESSION['uid']=$usern;
-        $_SESSION['userid']=$useri;
+      header("location:../customer/index.html");//takes user to this page if they are a JOAT account user
+      $_SESSION['uid']=$usern;
+      $_SESSION['userid']=$useri;
     }elseif (password_verify($pass,$hshpwd) && $u_type=='Moderator') {
-        header('location:../moderator/home.php');
-		$_SESSION['uid']=$usern;
+        header('location:../moderator/home.html');
+        $_SESSION['uid']=$usern;
         $_SESSION['userid']=$useri;
     }elseif (password_verify($pass,$hshpwd) && $u_type=='management'){
-      header ('location:../management/home.php');
-	  $_SESSION['uid']=$usern;
-        $_SESSION['userid']=$useri;
+      header ('location:../management/home.html');
+      $_SESSION['uid']=$usern;
+      $_SESSION['userid']=$useri;
     }elseif (password_verify($pass,$hshpwd) && $u_type=='content creator') {
-      header('location:../content_creator/home.php');
-	  $_SESSION['uid']=$usern;
-        $_SESSION['userid']=$useri;
+      header('location:../content_creator/home.html');
+      $_SESSION['uid']=$usern;
+      $_SESSION['userid']=$useri;
     }else {
       echo"Either username or password do not match please try again";
       echo"<a href='../login.html'><button type='button' class='btn btn-primary btn-lg' >return to Login</button></a>";
@@ -185,7 +132,7 @@ if(mysqli_num_rows($result)>0){
   }else {
     echo"Either username or password do not match please try again";
     echo"<a href='../login.html'><button type='button' class='btn btn-primary btn-lg' >return to Login</button></a>";
-  
+
     $_SESSION=[];
     session_destroy();
   }

@@ -70,7 +70,7 @@
 $username = 'Farhan';
 $password = 'Farhan3712356';
 $servername = 'localhost';
-$dbname = 'joat';
+$dbname = 'joat_project';
 
 
 try {
