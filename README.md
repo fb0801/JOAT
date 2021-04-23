@@ -1,2 +1,2 @@
 # JOAT
-Final yr project of a financial web application using Bootstrap and other tools
+Final year project of a financial web application using Bootstrap and other tools
