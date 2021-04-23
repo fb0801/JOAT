@@ -50,14 +50,14 @@
     <!--content for collapse narbar-->
     <div class="collapse navbar-collapse" id="myNavbar">
       <ul class="nav navbar-nav">
-        <li ><a href="home.html">Dashboard</a></li>
+        <li ><a href="home.php">Dashboard</a></li>
         <li><a href="application.php">Applications</a></li>
         <li class="active"><a href="joat_user.html">Users</a></li>
         <li ><a href="asset.html">Assets</a></li>
         <li ><a href="content_add.html">Create Content</a></li>
-        <li ><a href="content_view.html">View articles</a></li>
-        <li><a href="content_news.html">View News</a></li>
-        <li><a href="content_report.html">Reports</a></li>
+        <li ><a href="content_view.php">View articles</a></li>
+        <li><a href="content_news.php">View News</a></li>
+        <li><a href="content_report.php">Reports</a></li>
         <li><a href="../logout.php">log out</a></li>
       </ul>
     </div>
@@ -72,14 +72,14 @@
       </div>
 
       <ul class="nav nav-pills nav-stacked">
-        <li ><a href="home.html">Dashboard</a></li>
+        <li ><a href="home.php">Dashboard</a></li>
         <li><a href="application.php">Applications</a></li>
-        <li class="active"><a href="joat_user.html">Users</a></li>
-        <li ><a href="asset.html">Assets</a></li>
+        <li><a href="joat_user.html">Users</a></li>
+        <li class="active"><a href="asset.html">Assets</a></li>
         <li ><a href="content_add.html">Create Content</a></li>
-        <li ><a href="content_view.html">View articles</a></li>
-        <li><a href="content_news.html">View News</a></li>
-        <li><a href="content_report.html">Reports</a></li>
+        <li ><a href="content_view.php">View articles</a></li>
+        <li><a href="content_news.php">View News</a></li>
+        <li><a href="content_report.php">Reports</a></li>
         <li><a href="../logout.php">log out</a></li>
       </ul><br>
     </div>

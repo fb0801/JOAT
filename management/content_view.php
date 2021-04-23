@@ -48,7 +48,7 @@ require_once('includes/dbutils.php');
         <span class="icon-bar"></span>
       </button>
 
-      <a href="home.html"><img class ="logo" src="../image/logo2.jpg" alt="Logo" title="return to mainpage"></a>
+      <a href="home.php"><img class ="logo" src="../image/logo2.jpg" alt="Logo" title="return to mainpage"></a>
 
     </div>
     <!--content for collapse narbar-->
@@ -72,7 +72,7 @@ require_once('includes/dbutils.php');
   <div class="row content">
 
     <div class="col-sm-3 sidenav hidden-xs">
-      <div class="space"><a href="home.html"><img class ="logo" src="../image/logo2.jpg" alt="Logo" title="return to mainpage"></a>
+      <div class="space"><a href="home.php"><img class ="logo" src="../image/logo2.jpg" alt="Logo" title="return to mainpage"></a>
       </div>
 
       <ul class="nav nav-pills nav-stacked">

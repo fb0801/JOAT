@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <head>
-  <title>JOAT | user</title>
+  <title>JOAT | Asset view</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -44,7 +44,7 @@
         <span class="icon-bar"></span>
       </button>
 
-      <a href="../home.php"><img class ="logo" src="../image/logo2.jpg" alt="Logo" title="return to mainpage"></a>
+      <a href="home.php"><img class ="logo" src="../image/logo2.jpg" alt="Logo" title="return to mainpage"></a>
 
     </div>
     <!--content for collapse narbar-->
@@ -52,8 +52,8 @@
       <ul class="nav navbar-nav">
         <li ><a href="home.php">Dashboard</a></li>
         <li><a href="application.php">Applications</a></li>
-        <li class="active"><a href="joat_user.html">Users</a></li>
-        <li ><a href="asset.html">Assets</a></li>
+        <li><a href="joat_user.html">Users</a></li>
+        <li class="active"><a href="asset.html">Assets</a></li>
         <li ><a href="content_add.html">Create Content</a></li>
         <li ><a href="content_view.php">View articles</a></li>
         <li><a href="content_news.php">View News</a></li>
@@ -74,8 +74,8 @@
       <ul class="nav nav-pills nav-stacked">
         <li ><a href="home.php">Dashboard</a></li>
         <li><a href="application.php">Applications</a></li>
-        <li class="active"><a href="joat_user.html">Users</a></li>
-        <li ><a href="asset.html">Assets</a></li>
+        <li><a href="joat_user.html">Users</a></li>
+        <li class="active"><a href="asset.html">Assets</a></li>
         <li ><a href="content_add.html">Create Content</a></li>
         <li ><a href="content_view.php">View articles</a></li>
         <li><a href="content_news.php">View News</a></li>
@@ -90,18 +90,7 @@
         <p>Some text..</p>
       </div>
     <div class="container">
-      <h2 id="Joat_head">JOAT user</h2>
-
-
-      <div class="col-sm-4">
-      <a href="user_add.html"><button type="button" class="btn btn-primary btn-lg">Add user</button></a>
-      </div>
-
-      <div class="col-sm-4">
-      <a href=""><button type="button" class="btn btn-primary btn-lg">Remove user</button></a>
-      </div>
-
-
+      <h2 id="Joat_head">JOAT asset view</h2>
 </div>
 </div>
 </div>

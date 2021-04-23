@@ -1,3 +1,7 @@
+<?php
+include '../includes/joat_session.php';
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -44,19 +48,19 @@
         <span class="icon-bar"></span>
       </button>
 
-      <a href="home.html"><img class ="logo" src="../image/logo2.jpg" alt="Logo" title="return to mainpage"></a>
+      <a href="home.php"><img class ="logo" src="../image/logo2.jpg" alt="Logo" title="return to mainpage"></a>
 
     </div>
     <div class="collapse navbar-collapse" id="myNavbar">
       <ul class="nav navbar-nav">
-        <li class="active"><a href="home.html">Dashboard</a></li>
+        <li class="active"><a href="home.php">Dashboard</a></li>
         <li><a href="application.php">Applications</a></li>
         <li><a href="joat_user.html">Users</a></li>
-        <li><a href="asset.html">Assets</a></li>
+        <li ><a href="asset.html">Assets</a></li>
         <li ><a href="content_add.html">Create Content</a></li>
-        <li><a href="content_view.html">View articles</a></li>
-        <li><a href="content_news.html">View News</a></li>
-        <li><a href="content_report.html">Reports</a></li>
+        <li ><a href="content_view.php">View articles</a></li>
+        <li><a href="content_news.php">View News</a></li>
+        <li><a href="content_report.php">Reports</a></li>
         <li><a href="../logout.php">log out</a></li>
       </ul>
     </div>
@@ -67,17 +71,17 @@
   <div class="row content">
 
     <div class="col-sm-3 sidenav hidden-xs">
-      <div class="space"><a href="home.html"><img class ="logo" src="../image/logo2.jpg" alt="Logo" title="return to mainpage"></a>
+      <div class="space"><a href="home.php"><img class ="logo" src="../image/logo2.jpg" alt="Logo" title="return to mainpage"></a>
       </div>
       <ul class="nav nav-pills nav-stacked">
-        <li class="active"><a href="home.html">Dashboard</a></li>
+        <li class="active"><a href="home.php">Dashboard</a></li>
         <li><a href="application.php">Applications</a></li>
         <li><a href="joat_user.html">Users</a></li>
         <li><a href="asset.html">Assets</a></li>
         <li ><a href="content_add.html">Create Content</a></li>
-        <li><a href="content_view.html">View articles</a></li>
-        <li><a href="content_news.html">View News</a></li>
-        <li><a href="content_report.html">Reports</a></li>
+        <li><a href="content_view.php">View articles</a></li>
+        <li><a href="content_news.php">View News</a></li>
+        <li><a href="content_report.php">Reports</a></li>
         <li><a href="../logout.php">log out</a></li>
       </ul><br>
     </div>
@@ -86,7 +90,11 @@
     <div class="col-sm-9">
       <div class="well">
         <h4>Dashboard</h4>
-        <p>Some text..</p>
+        <?php
+
+        echo "welcome " . $_SESSION['uid'] . ".<br>";
+
+        ?>
       </div>
       <div class="row">
         <div class="col-sm-3">
