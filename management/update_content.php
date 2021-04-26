@@ -92,9 +92,9 @@
     <div class="container">
       <h2 id="Joat_head">JOAT content changes</h2>
       <?php
-      require_once "includes/dbutils.php";
+      require_once "../includes/dbutils.php";
 
-      if ( isset( $_GET['']) && isset( $_GET['']) && isset( $_GET['']) && isset( $_GET['']) && isset( $_GET['']) && isset( $_GET[''])&&isset($_GET[''])) {
+      if ( isset( $_GET['contentid']) && isset( $_GET['contentTitle']) && isset( $_GET['contentshortDescription']) && isset( $_GET['contentDescription']) && isset( $_GET['joat_made_content'])) {
         print "ok";
       }
       else {

@@ -1,5 +1,5 @@
 <?php
-require_once('includes/dbutils.php');
+require_once('../includes/dbutils.php');
 ?>
 
 <!DOCTYPE html>
@@ -100,7 +100,7 @@ require_once('includes/dbutils.php');
       $pdo = connect();
       htmlTable_3( $pdo, 'joat_content');
       if ( isset( $_GET['deletionid'])) {
-        $errorMessage = deleteRecord( $pdo, $_GET['deletionid']);
+        $errorMessage = deleteRecord_3( $pdo, $_GET['deletionid']);
         if ( $errorMessage != "") {
           print "<div class='errormessage'>$errorMessage</div>\n";
         } else {
@@ -109,7 +109,6 @@ require_once('includes/dbutils.php');
       }
 
       ?>
-
 
 
 

@@ -50,14 +50,14 @@
       <div class="collapse navbar-collapse" id="myNavbar">
         <ul class="nav navbar-nav">
           <li ><a href="home.php">Dashboard</a></li>
-          <li><a href="application.php">Applications</a></li>
-          <li><a href="joat_user.html">Users</a></li>
-          <li class="active"><a href="asset.html">Assets</a></li>
-          <li ><a href="content_add.html">Create Content</a></li>
-          <li ><a href="content_view.php">View articles</a></li>
-          <li><a href="content_news.php">View News</a></li>
-          <li><a href="content_report.php">Reports</a></li>
-          <li><a href="../logout.php">log out</a></li>
+            <li><a href="application.php">Applications</a></li>
+            <li><a href="joat_user.html">Users</a></li>
+            <li class="active"><a href="asset.html">Assets</a></li>
+            <li ><a href="content_add.php">Create Content</a></li>
+            <li ><a href="content_view.php">View articles</a></li>
+            <li><a href="content_news.php">View News</a></li>
+            <li><a href="content_report.php">Reports</a></li>
+            <li><a href="../logout.php">log out</a></li>
         </ul>
       </div>
     </div>
@@ -72,14 +72,14 @@
 
         <ul class="nav nav-pills nav-stacked">
           <li ><a href="home.php">Dashboard</a></li>
-          <li><a href="application.php">Applications</a></li>
-          <li><a href="joat_user.html">Users</a></li>
-          <li ><a href="asset.html">Assets</a></li>
-          <li class="active"><a href="content_add.html">Create Content</a></li>
-          <li ><a href="content_view.php">View articles</a></li>
-          <li><a href="content_news.php">View News</a></li>
-          <li><a href="content_report.php">Reports</a></li>
-          <li><a href="../logout.php">log out</a></li>
+            <li><a href="application.php">Applications</a></li>
+            <li><a href="joat_user.html">Users</a></li>
+            <li class="active"><a href="asset.html">Assets</a></li>
+            <li ><a href="content_add.php">Create Content</a></li>
+            <li ><a href="content_view.php">View articles</a></li>
+            <li><a href="content_news.php">View News</a></li>
+            <li><a href="content_report.php">Reports</a></li>
+            <li><a href="../logout.php">log out</a></li>
         </ul><br>
       </div>
       <br>
@@ -90,20 +90,20 @@
       </div>
     <div class="container">
       <h2 id="Joat_head">JOAT content changes</h2>
-      <form action="../includes/createcontent.php" method="POST">
+      <form action="update_content.php" method="REQUEST">
 
         <div class="form-group">
           <label id='lbl' for="name">Title:</label>
           <div class="input-group">
           <span class="input-group-addon">Title</span>
-          <input type="text" class="form-control" id="contentID" name="contentID" size="10" value ="<?php echo $_POST['ci']; ?>">
+          <input type="text" class="form-control" id="contentID" name="contentid" size="10" value ="<?php echo $_REQUEST['cid']; ?>">
         </div></div>
 
         <div class="form-group">
           <label id='lbl' for="name">Title:</label>
           <div class="input-group">
           <span class="input-group-addon">Title</span>
-          <input type="text" class="form-control" id="name" placeholder="Enter your content title" name="name" size="10" value ="<?php echo $_POST['ct']; ?>">
+          <input type="text" class="form-control" id="name" placeholder="Enter your content title" name="contentTitle" size="10" value ="<?php echo $_REQUEST['ct']; ?>">
         </div></div>
 
 
@@ -111,7 +111,7 @@
           <label id='lbl_5' for="sel1">Content Type (select one):</label>
           <div class="input-group">
           <span class="input-group-addon"><i class="glyphicon glyphicon-pencil"data-toggle="tooltip" title="Select the content type you would like to create" ></i></span>
-          <select class="form-control" id="sel1" name='content_type' value ="<?php echo $_POST['jmt']; ?>">
+          <select class="form-control" id="sel1" name='joat_made_content' value ="<?php echo $_REQUEST['jmt']; ?>">
             <option value='News'>News</option>
             <option value ='Article'>Article</option>
 
@@ -124,14 +124,14 @@
           <label id='lbl' for="text preview"></label>
           <div class="input-group">
           <span class="input-group-addon">Preview text</span>
-          <textarea name="pre_txt" rows="5" cols="50" value ="<?php echo $_POST['csd']; ?>"></textarea>
+          <textarea name="contentshortDescription" rows="5" cols="50" value ="<?php echo $_GET['csd']; ?>"></textarea>
 
         </div></div>
         <div class="form-group">
           <label id='lbl' for="text preview"></label>
           <div class="input-group">
           <span class="input-group-addon">Content text</span>
-          <textarea name="content_txt" rows="5" cols="50" value ="<?php echo $_POST['jcd']; ?>"></textarea>
+          <textarea name="contentDescription" rows="5" cols="50" value ="<?php echo $_GET['jcd']; ?>"></textarea>
 
 
         </div></div>
