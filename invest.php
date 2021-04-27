@@ -50,7 +50,7 @@
     </ul>
 
 
-       <form class="navbar-form navbar-right" action="">
+    <form class="navbar-form navbar-right" action="includes/joat_search.php" method="POST">
       <div class="input-group">
         <input type="text" class="form-control" placeholder="Search" name="search">
         <div class="input-group-btn">
