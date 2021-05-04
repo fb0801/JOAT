@@ -9,7 +9,7 @@ include '../includes/joat_session.php';
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" type="text/css" href="../web_app.css"> <!--own stylesheet-->
   <script type="text/javascript" src="../web_app_js.js"></script> <!--own javascript file-->
-  <link rel="shortcut icon" type="image/x-icon" href="image/favicon.ico"> <!--adds a image to the title-->
+  <link rel="shortcut icon" type="image/x-icon" href="../image/favicon.ico"> <!--adds a image to the title-->
 
 <!--3 bootstrapcdn links-->
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
@@ -19,7 +19,7 @@ include '../includes/joat_session.php';
 <body>
 
 <div class="dif">
-<a href="home.html"><img class ="logo" src="../image/logo2.jpg" alt="Logo" title="return to mainpage"></a>
+<a href="home.php"><img class ="logo" src="../image/logo2.jpg" alt="Logo" title="return to mainpage"></a>
 <br><br><br><br>
 </div>
 
@@ -32,15 +32,16 @@ include '../includes/joat_session.php';
       <span class="icon-bar"></span>
       <span class="icon-bar"></span>
     </button>
-    <a class="navbar-brand" href="index.html">JOAT</a>
+    <a class="navbar-brand" href="home.php">JOAT</a>
   </div>
   <div class="collapse navbar-collapse" id="myNavbar">
     <ul class="nav navbar-nav">
-      <li><a href="home.html">Home</a></li>
-      <li><a href="invest.html">Investment</a></li>
-      <li><a href="portfolio.html">Portfolio</a></li>
-    <li class="active"><a href="news.html">News</a></li>
-    <li ><a href="article.html">Articles</a></li>
+      <li><a href="home.php">Home</a></li>
+      <li><a href="invest.php">Investment</a></li>
+      <li><a href="portfolio.php">Portfolio</a></li>
+    <li class="active"><a href="news.php">News</a></li>
+    <li ><a href="article.php">Articles</a></li>
+    <li><a href="forum.php">Forum</a></li>
 
   </ul>
 
@@ -72,7 +73,11 @@ include '../includes/joat_session.php';
 
 <div class="container text-left">
 <h2 id="Joat_head">JOAT News</h2>
+<?php
+require_once('../includes/articledisplay.php');
+JoatNewsDisplay();
 
+?>
 
 
 

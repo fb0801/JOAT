@@ -23,7 +23,7 @@ include '../includes/joat_session.php';
     </div>
 
 <div class="dif">
-<a href="home.html"><img class ="logo" src="../image/logo2.jpg" alt="Logo" title="return to mainpage"></a>
+<a href="home.php"><img class ="logo" src="../image/logo2.jpg" alt="Logo" title="return to mainpage"></a>
 <br><br><br><br>
 </div>
 
@@ -36,16 +36,16 @@ include '../includes/joat_session.php';
       <span class="icon-bar"></span>
       <span class="icon-bar"></span>
     </button>
-    <a class="navbar-brand" href="index.html">JOAT</a>
+    <a class="navbar-brand" href="home.php">JOAT</a>
   </div>
   <div class="collapse navbar-collapse" id="myNavbar">
     <ul class="nav navbar-nav">
-      <li><a href="home.html">Home</a></li>
-      <li class="active"><a href="invest.html">Investment</a></li>
-      <li><a href="portfolio.html">Portfolio</a></li>
-    <li ><a href="news.html">News</a></li>
-    <li ><a href="article.html">Articles</a></li>
-
+      <li><a href="home.php">Home</a></li>
+      <li class="active"><a href="invest.php">Investment</a></li>
+      <li><a href="portfolio.php">Portfolio</a></li>
+    <li ><a href="news.php">News</a></li>
+    <li ><a href="article.php">Articles</a></li>
+  <li><a href="forum.php">Forum</a></li>
   </ul>
 
 
@@ -79,7 +79,7 @@ include '../includes/joat_session.php';
 
 
 <div class="row">
-  <a class="edit_link_2" href="invest_create.html"><div class="col-sm-4">
+  <a class="edit_link_2" href="invest_create.php"><div class="col-sm-4">
     <div class="well">
       <h4>Stock and shares ISA</h4>
       <p>All your invesments within an ISA tax free</p>
@@ -88,7 +88,7 @@ include '../includes/joat_session.php';
   </div>
 
 
-        <a class="edit_link_2" href="invest_create.html"><div class="col-sm-4">
+        <a class="edit_link_2" href="invest_create.php"><div class="col-sm-4">
           <div class="well">
             <h4>General Investment ISA</h4>
             <p>All your invesments with some tax</p>
