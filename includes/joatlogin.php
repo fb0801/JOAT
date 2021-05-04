@@ -38,11 +38,11 @@ session_start();
     <div class="collapse navbar-collapse" id="myNavbar">
       <ul class="nav navbar-nav">
         <li><a href="../index.html">Home</a></li>
-        <li><a href="../invest.html">Investment</a></li>
-      <li><a href="../card.html">Card Companies</a></li>
-      <li><a href="../news.html">News</a></li>
-      <li><a href="../article.html">Articles</a></li>
-      <li><a href="../apply.html">Apply</a></li>
+        <li><a href="../invest.php">Investment</a></li>
+      <li><a href="../card.php">Card Companies</a></li>
+      <li><a href="../news.php">News</a></li>
+      <li><a href="../article.php">Articles</a></li>
+      <li><a href="../apply.php">Apply</a></li>
       <li><a href="../about_us.html">About us</a></li>
       <li><a href="../contact.html">Contact us</a></li>
       <li><a href="../feedback.html">Feedback</a></li>
@@ -103,24 +103,24 @@ $dbName);
 
 //check what user entered against what is in the database for the password
     if (password_verify($pass,$hshpwd) && $u_type =='JOAT Invest') {
-      	header("location:../trader/home.html");
+      	header("location:../trader/home.php");
         //assings different things for the session
         $_SESSION['uid']=$usern;
         $_SESSION['userid']=$useri;
     }elseif (password_verify($pass,$hshpwd) && $u_type=='JOAT Account') {
-      header("location:../customer/index.html");//takes user to this page if they are a JOAT account user
+      header("location:../customer/index.php");//takes user to this page if they are a JOAT account user
       $_SESSION['uid']=$usern;
       $_SESSION['userid']=$useri;
     }elseif (password_verify($pass,$hshpwd) && $u_type=='Moderator') {
-        header('location:../moderator/home.html');
+        header('location:../moderator/home.php');
         $_SESSION['uid']=$usern;
         $_SESSION['userid']=$useri;
     }elseif (password_verify($pass,$hshpwd) && $u_type=='management'){
-      header ('location:../management/home.html');
+      header ('location:../management/home.php');
       $_SESSION['uid']=$usern;
       $_SESSION['userid']=$useri;
     }elseif (password_verify($pass,$hshpwd) && $u_type=='content creator') {
-      header('location:../content_creator/home.html');
+      header('location:../content_creator/home.php');
       $_SESSION['uid']=$usern;
       $_SESSION['userid']=$useri;
     }else {
