@@ -1,3 +1,6 @@
+<?php
+require_once('../includes/dbutils.php');
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -53,7 +56,7 @@
         <li ><a href="home.php">Dashboard</a></li>
         <li><a href="application.php">Applications</a></li>
         <li><a href="joat_user.html">Users</a></li>
-        <li ><a href="asset.html">Assets</a></li>
+        <li><a href="asset.html">Assets</a></li>
         <li ><a href="content_add.html">Create Content</a></li>
         <li ><a href="content_view.php">View articles</a></li>
         <li><a href="content_news.php">View News</a></li>
@@ -90,26 +93,25 @@
         <p>Some text..</p>
       </div>
     <div class="container">
-      <h2 id="Joat_head">JOAT Reports</h2>
+      <h2 id="Joat_head">JOAT issues</h2>
+
+
+<?php
+//connect to the databse to show all JOAT issues
+$pdo =connect();
+htmlTable( $pdo, 'joat_issues_view');
+
+
+
+print"<div class='col-sm-4'>
+<a href='content_report.html'><button type='button' class='btn btn-primary btn-lg'>back</button></a>
+</div>";
+?>
+
+
+
 </div>
-
-<div class="col-sm-4">
-<a href="#"><button type="button" class="btn btn-primary btn-lg">View reports</button></a>
 </div>
-
-<div class="col-sm-4">
-<a href="joat_feedback.php"><button type="button" class="btn btn-primary btn-lg">view feedback</button></a>
-</div>
-
-<div class="col-sm-3">
-  <a href="joat_contact.php"><button type="button" class="btn btn-primary btn-lg">view contact</button</a></div>
-
-
-</div>
-</div>
-
-<div class="col-sm-4">
-<a href="joat_view_issue.php"><button type="button" class="btn btn-primary btn-lg">view feedback</button></a>
 </div>
 
 
