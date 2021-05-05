@@ -5,7 +5,7 @@ include '../includes/joat_session.php';
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>JOAT | Article</title>
+  <title>JOAT | Invest</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" type="text/css" href="../web_app.css"> <!--own stylesheet-->
@@ -38,10 +38,10 @@ include '../includes/joat_session.php';
   <div class="collapse navbar-collapse" id="myNavbar">
     <ul class="nav navbar-nav">
       <li><a href="home.php">Home</a></li>
-      <li><a href="invest.php">Investment</a></li>
+      <li class="active"><a href="invest.php">Investment</a></li>
       <li><a href="portfolio.php">Portfolio</a></li>
     <li ><a href="news.php">News</a></li>
-    <li class="active"><a href="article.php">Articles</a></li>
+    <li ><a href="article.php">Articles</a></li>
   <li><a href="forum.php">Forum</a></li>
   </ul>
 
@@ -72,19 +72,41 @@ include '../includes/joat_session.php';
 
 
 <div class="container text-left">
-<h2 id="Joat_head">Articles</h2>
+<h2 id="Joat_head">JOAT invest</h2>
 
 <?php
-require_once('../includes/articledisplay.php');
-JoatArticleDisplay();
+require_once('../includes/dbutils.php');
+$pdo=connect();
+
+$useri=$_SESSION['userid'];
+
+$portfoliomaker=$useri;
+$portfolioname=$_REQUEST['name'];
+    $joat_portfolio_nin= $_REQUEST['nin'];
+	$joat_job_status_type=$_REQUEST['status_type'];
+  $portfolio_type=$_REQUEST['account_type'];
+
+	//}else{
 
 
- ?>
 
+
+
+	$sql = "INSERT INTO joat_portfolio (portfolioName,portfolioType,user_id,joat_user_job,joat_user_nin)
+      VALUES('$portfolioname', '$portfolio_type', '$portfoliomaker', '$joat_job_status_type','$joat_portfolio_nin')";
+	 // use exec() because no results are returned
+	$pdo->exec($sql);
+	echo "Portfolio created, start investing";
+	//print "<p>Recordhas been sent and will be reviewed by the admissions team</p>";
+	//header ('location:home.php');
+  echo "<div class='col-sm-4'>
+  <a href='home.php'><button type='button' class='btn btn-primary btn-lg'>Home</button></a>
+  </div>";
+
+
+?>
 
 </div>
-
-
 <div class="bottom_sec">
 <footer>
 <p>&copy; This is a demonstration website for LSBU (London Southbank University) all images and text are from, Yahoo finance, Google finance, Blackrock, Ishares, Vanguard and my own blog</p>

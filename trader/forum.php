@@ -22,7 +22,7 @@ include '../includes/joat_session.php';
 <body>
   <div class="dif">
 
-    <a href="home.html"><img class ="logo" src="../image/logo2.jpg" alt="Logo" title="return to mainpage"></a>
+    <a href="home.php"><img class ="logo" src="../image/logo2.jpg" alt="Logo" title="return to mainpage"></a>
 <br><br><br><br>
 </div>
 
@@ -35,16 +35,16 @@ include '../includes/joat_session.php';
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="home.html">JOAT</a>
+      <a class="navbar-brand" href="home.php">JOAT</a>
     </div>
     <div class="collapse navbar-collapse" id="myNavbar">
       <ul class="nav navbar-nav">
-        <li class="active"><a href="home.html">Home</a></li>
-        <li><a href="invest.html">Investment</a></li>
-      <li><a href="portfolio.html">Portfolio</a></li>
-      <li><a href="news.html">News</a></li>
-      <li><a href="article.html">Articles</a></li>
-      <li><a href="Forum.html">Forum</a></li>
+        <li class="active"><a href="home.php">Home</a></li>
+        <li><a href="invest.php">Investment</a></li>
+      <li><a href="portfolio.php">Portfolio</a></li>
+      <li><a href="news.php">News</a></li>
+      <li><a href="article.php">Articles</a></li>
+      <li><a href="Forum.php">Forum</a></li>
 
     </ul>
 
