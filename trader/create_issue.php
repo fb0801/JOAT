@@ -1,5 +1,6 @@
 <?php
 include '../includes/joat_session.php';
+require_once "dbutils.php";
 ?>
 
 <!DOCTYPE html>
@@ -74,29 +75,67 @@ include '../includes/joat_session.php';
   </div>  </div>
 </nav>
 
-<div class="container">
-  <h2 id="Joat_head_2">JOAT Invest</h2>
-  <?php
+<?php
+
+$username = 'Farhan';
+$password = 'Farhan3712356';
+$servername = 'localhost';
+$dbname = 'joat_project';
+/*joat*/
+
+try {
+  $conn = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password);
+  // set the PDO error mode to exception
+  $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+
+  // prepare sql and bind parameters
+  $stmt = $conn->prepare("INSERT INTO joat_issues_view (user_id,joat_issue_title,joat_issue_type,joat_issue_txt)
+  VALUES (:tuser,:tname,:issue,:con_msg)");
 
 
-  //print "Welcome " . $_SESSION['userid'].;
-  //echo "welcome " . $_SESSION['userid'] . ".<br>";
-  //echo  $_SESSION['userid'] ;
-  //echo $_SESSION['userid']=$useri;
-  echo "welcome " . $_SESSION['uid'] . "<br>";
+  $stmt->bindParam(':tuser',$user_issue);
+  $stmt->bindParam(':issue', $issue_tpe);
+  $stmt->bindParam(':con_msg', $msg);
+  $stmt->bindParam(':tname', $name);
 
-  ?>
+  // insert a row
+  $useri=$_SESSION['userid'];
+  $user_issue=$useri;
+  $issue_tpe = $_REQUEST['issue_type'];
+  $msg=$_REQUEST['content_txt'];
+  $name=$_REQUEST['name'];
+  $stmt->execute();
+
+  // insert another row
+
+  //echo "New record created successfully";
+  print "<p>Thanks for letting us know</p>
+  <a class='edit_link' href='home.php'><button type='submit' class='btn btn-default'>Home</button></a>";
+
+      //<button type='submit' class='btn btn-default'><a class='edit_link' href='../login.html'>Login</a></button>";
+    }
+catch(PDOException $e)
+    {
+    //echo $sql . "<br>" . $e->getMessage();
+    echo "Error: " . $e->getMessage();
+    }
+//}
+
+
+$conn = null;
+?>
+
+
+
+?>
 
 
 
 </div>
-
-
-
-
-
+</div>
+</div>
 <div class="bottom_sec">
-  <footer>
+<footer>
 <p>&copy; This is a demonstration website for LSBU (London Southbank University) all images and text are from, Yahoo finance, Google finance, Blackrock, Ishares, Vanguard and my own blog</p>
 </footer>
 </div>
@@ -107,6 +146,26 @@ include '../includes/joat_session.php';
 //Get the button
 var mybutton = document.getElementById("mybtn");
 
+function changeBGC(color){
+if (color=='#000000'){
+  document.body.style.backgroundColor = color;
+  document.getElementById('lbl_6').style.color="white";
+  document.getElementById('lbl_3_email').style.color="white";
+  document.getElementById('lbl_5_contact').style.color="white";
+  document.getElementById('Joat_head').style.color='white';
+
+
+
+}else{
+  //change element colour back
+  document.body.style.backgroundColor = color;
+  document.getElementById('lbl_6').style.color="black";
+  document.getElementById('lbl_3_email').style.color="black";
+  document.getElementById('lbl_5_contact').style.color="black";
+  document.getElementById('Joat_head').style.color='black';
+
+
+}}
 </script>
 </body>
 </html>

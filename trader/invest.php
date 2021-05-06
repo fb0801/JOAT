@@ -20,7 +20,7 @@ include '../includes/joat_session.php';
 <body>
 
 <div class="dif">
-<a href="home.html"><img class ="logo" src="../image/logo2.jpg" alt="Logo" title="return to mainpage"></a>
+<a href="home.php"><img class ="logo" src="../image/logo2.jpg" alt="Logo" title="return to mainpage"></a>
 <br><br><br><br>
 </div>
 
@@ -33,15 +33,16 @@ include '../includes/joat_session.php';
       <span class="icon-bar"></span>
       <span class="icon-bar"></span>
     </button>
-    <a class="navbar-brand" href="index.html">JOAT</a>
+    <a class="navbar-brand" href="home.php">JOAT</a>
   </div>
   <div class="collapse navbar-collapse" id="myNavbar">
     <ul class="nav navbar-nav">
-      <li><a href="home.html">Home</a></li>
-      <li class="active"><a href="invest.html">Investment</a></li>
-      <li><a href="portfolio.html">Portfolio</a></li>
-    <li ><a href="news.html">News</a></li>
-    <li ><a href="article.html">Articles</a></li>
+      <li><a href="home.php">Home</a></li>
+      <li class="active"><a href="invest.php">Investment</a></li>
+      <li><a href="portfolio.php">Portfolio</a></li>
+    <li ><a href="news.php">News</a></li>
+    <li ><a href="article.php">Articles</a></li>
+    <li><a href="forum.php">Forum</a></li>
 
   </ul>
 
@@ -62,6 +63,7 @@ include '../includes/joat_session.php';
     <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href=""><span class="glyphicon glyphicon-user" title="Make account"></span> Account <span class="caret"></span></a>
         <ul class="dropdown-menu">
           <li><a href="#">manage account</a></li>
+          <li><a href="report_issue.php">report issue</a></li>
           <li><a href="../logout.php">log out</a></li>
         </ul>
       </li>
@@ -74,12 +76,108 @@ include '../includes/joat_session.php';
 <div class="container text-left">
 <h2 id="Joat_head">JOAT invest</h2>
 
+<?php
+
+require_once "../includes/dbutils.php";
+function JoatInvestDisplay(){
+$pdo=connect();
+$useri=$_SESSION['userid'];
+
+$results = $pdo->query("SELECT joat_user.user_id,joat_portfolio.portfolioName, joat_portfolio.portfolioValue,joat_portfolio.portfolioQuantity,
+joat_portfolio.assetTotal,joat_portfolio.portfolioType,joat_portfolio.user_id FROM joat_user INNER join joat_portfolio on
+joat_user.user_id=joat_portfolio.user_id
+WHERE joat_portfolio.user_id='$useri'",PDO::FETCH_ASSOC);
 
 
 
 
+switch ($results) {
+  /*case '0':
+  echo "<a class='edit_link_2' href='invest_home.php'><div class='col-sm-4'>
+      <div class='well'>
+        <h4>Investing</h4>
+        <p>Create a ISA for investing</p>
+
+      </div></a>";
+    break;*/
+  case '1':
+    echo "<a class='edit_link_2' href='portfolio.php'><div class='col-sm-4'>
+        <div class='well'>
+          <h4>View your portfolio</h4>
+          <p>Check your investments</p>
+
+        </div></a>";
+    break;
+  default:
+    echo "<a class='edit_link_2' href='invest_home.php'><div class='col-sm-4'>
+        <div class='well'>
+          <h4>Investing</h4>
+          <p>Create a ISA for investing</p>
+
+        </div></a>";
+}/*
+if ($results ==True) {
+  echo "<a class='edit_link_2' href='portfolio.php'><div class='col-sm-4'>
+      <div class='well'>
+        <h4>View your portfolio</h4>
+        <p>Check your investments</p>
+
+      </div></a>";
+}else {
+  echo "<a class='edit_link_2' href='invest_home.php'><div class='col-sm-4'>
+      <div class='well'>
+        <h4>Investing</h4>
+        <p>Create a ISA for investing</p>
+
+      </div></a>";
+}*/
+
+/*
+$dbServername= "localhost";
+$dbUsername ="root";
+$dbPassword="";
+$dbName = 'joat_project';
+
+$connn=mysqli_connect($dbServername, $dbUsername, $dbPassword, $dbName);
+
+$useri=$_SESSION['userid'];
+
+  $sql="SELECT joat_user.user_id,joat_portfolio.portfolioName, joat_portfolio.portfolioValue,joat_portfolio.portfolioQuantity,
+  joat_portfolio.assetTotal,joat_portfolio.portfolioType FROM joat_user INNER join joat_portfolio on joat_user.user_id=joat_portfolio.user_id
+  WHERE joat_portfolio.user_id='$useri'";
+
+  $result=mysqli_query($connn,$sql);
+  if(mysqli_num_rows($result)>0){
+
+    echo "<a class='edit_link_2' href='portfolio.php'><div class='col-sm-4'>
+        <div class='well'>
+          <h4>View your portfolio</h4>
+          <p>Check your investments</p>
+
+        </div></a>";
+
+  }else{
+    echo "<a class='edit_link_2' href='invest_home.php'><div class='col-sm-4'>
+        <div class='well'>
+          <h4>Investing</h4>
+          <p>Create a ISA for investing</p>
+
+        </div></a>";
+  }
+  }
+mysqli_close($connn);
+*/
+}
+?>
+
+<?php
+JoatInvestDisplay();
+
+ ?>
 
 
+</div>
+</div>
 </div>
 <div class="bottom_sec">
 <footer>
