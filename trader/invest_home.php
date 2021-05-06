@@ -65,6 +65,7 @@ include '../includes/joat_session.php';
     <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href=""><span class="glyphicon glyphicon-user" title="Make account"></span> Account <span class="caret"></span></a>
         <ul class="dropdown-menu">
           <li><a href="#">manage account</a></li>
+          <li><a href="report_issue.php">report issue</a></li>
           <li><a href="../logout.php">log out</a></li>
         </ul>
       </li>
