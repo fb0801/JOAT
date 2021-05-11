@@ -45,7 +45,7 @@
           <span class="icon-bar"></span>
         </button>
 
-        <a href="home.html"><img class ="logo" src="../image/logo2.jpg" alt="Logo" title="return to mainpage"></a>
+        <a href="home.php"><img class ="logo" src="../image/logo2.jpg" alt="Logo" title="return to mainpage"></a>
 
       </div>
       <div class="collapse navbar-collapse" id="myNavbar">
@@ -91,7 +91,7 @@
       </div>
     <div class="container">
       <h2 id="Joat_head">JOAT Asset</h2>
-      <form action="" method="POST">
+      <form action="create_asset.php" method="POST">
         <div class="form-group">
           <label id='lbl' for="name">Title:</label>
           <div class="input-group">
@@ -139,7 +139,7 @@
           <label id='lbl_5' for="sel1">Market</label>
           <div class="input-group">
           <span class="input-group-addon"><i class="glyphicon glyphicon-pencil"data-toggle="tooltip" title="Select the investment status" ></i></span>
-          <select class="form-control" id="sel1" name='invest_status'>
+          <select class="form-control" id="sel1" name='invest_market'>
             <option value ='NYSE'>NYSE</option>
             <option value ='LSE'>LSE</option>
             <option value ='DBX'>DBX</option>
@@ -158,6 +158,13 @@
           <input type="text" class="form-control" id="name" placeholder="Price" name="joat_price" size="10">
         </div></div>
 <br>
+
+<div class="form-group">
+  <label id='lbl' for="quantity">Quantity:</label>
+  <div class="input-group">
+  <span class="input-group-addon">quantity</span>
+  <input type="text" class="form-control" id="name" placeholder="min quantity" name="joat_min_qty" size="10">
+</div></div>
 
         <button type="submit" class="btn btn-default">Submit</button>
       </form><br>

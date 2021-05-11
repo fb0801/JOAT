@@ -76,7 +76,7 @@
         <li><a href="application.php">Applications</a></li>
         <li><a href="joat_user.html">Users</a></li>
         <li ><a href="asset.html">Assets</a></li>
-        <li ><a href="content_add.html">Create Content</a></li>
+        <li ><a href="content_add.php">Create Content</a></li>
         <li ><a href="content_view.php">View articles</a></li>
         <li><a href="content_news.php">View News</a></li>
         <li class="active"><a href="content_report.php">Reports</a></li>
@@ -103,14 +103,14 @@
 
 <div class="col-sm-3">
   <a href="joat_contact.php"><button type="button" class="btn btn-primary btn-lg">view contact</button</a></div>
-
-
+<br>
+    <div class="col-sm-4">
+    <a href="joat_view_issue.php"><button type="button" class="btn btn-primary btn-lg">view issues</button></a>
+    </div>
 </div>
 </div>
 
-<div class="col-sm-4">
-<a href="joat_view_issue.php"><button type="button" class="btn btn-primary btn-lg">view feedback</button></a>
-</div>
+
 
 
     <div class="bottom_sec">

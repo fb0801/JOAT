@@ -1,3 +1,6 @@
+<?php
+require_once('../includes/dbutils.php');
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -91,6 +94,22 @@
       </div>
     <div class="container">
       <h2 id="Joat_head">JOAT asset view</h2>
+<?php
+$pdo =connect();
+htmlTable_5( $pdo, 'joat_investment_assets');
+if ( isset( $_GET['deletionid_3'])) {
+  $errorMessage = deleteRecord_4( $pdo, $_GET['deletionid_3']);
+  if ( $errorMessage != "") {
+    print "<div class='errormessage'>$errorMessage</div>\n";
+  } else {
+    print "<div class='message'>Record deleted.</div>\n";
+  }
+}
+
+print"<div class='col-sm-4'>
+<a href='asset.html'><button type='button' class='btn btn-primary btn-lg'>back</button></a>
+</div>";
+      ?>
 </div>
 </div>
 </div>

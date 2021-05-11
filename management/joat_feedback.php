@@ -104,7 +104,7 @@ htmlTable( $pdo, 'joat_feedback');
 
 
 print"<div class='col-sm-4'>
-<a href='content_report.html'><button type='button' class='btn btn-primary btn-lg'>back</button></a>
+<a href='home.php'><button type='button' class='btn btn-primary btn-lg'>back</button></a>
 </div>";
 ?>
 
