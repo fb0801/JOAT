@@ -20,7 +20,7 @@ function connect_2() {
   //function to connect to the database
   $dbUsername ="root";
 $dbPassword="";
-$dbName="joat_2";
+$dbName="joat_project";
 
 $conn=mysqli_connect($dbServername, $dbUsername, $dbPassword,
 $dbName);
@@ -29,6 +29,10 @@ if (!$conn) {
   die("Connection failed: " . mysqli_connect_error());
 }
 echo "Connected successfully";
+}
+
+function setUpSession() {
+  session_start();
 }
 
 function htmlTable( $pdo, $table) {
@@ -146,13 +150,34 @@ function htmlTable_3( $pdo, $table) {
     }
 	  print("<td><a class='edit_link_3'href='?deletionid=".$row['contentID']."' class='link'>Delete</a></td>");
 	print("<td><a class='edit_link_4'href='content_update.php?cid=$row[contentID]&ct=$row[contentTitle]&csd=$row[contentshortDescription]&jcd=$row[contentDescription]&jmt=$row[joat_made_content]'>Edit</a></td>");
-            
+
     print "</tr>";
 
   }
 	//
   print "</table>";
 
+}
+
+function deleteRecord_3( $pdo, $deletionid) {
+//delete a record from the table list
+ $errorMessage = "";
+ $stmt = $pdo->prepare("SELECT * FROM `joat_content` WHERE `contentID`=?");
+  $stmt->execute( array( $deletionid));
+  $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+  if ( count( $rows) == 1) {
+    // delete database record
+    $stmt = $pdo->prepare("DELETE FROM `joat_content` WHERE `contentID`=?");
+    $stmt->execute( array( $deletionid));
+    $affected_rows = $stmt->rowCount();
+//header ('location:application.php');
+  } else if (count( $rows) > 1) {
+    $errorMessage .= "ID matches more than one record. ";
+  } else {
+    $errorMessage .= "ID not found: nothing to delete. ";
+  }
+  return $errorMessage;
 }
 
 function deleteRecord_2( $pdo, $deletionid) {
